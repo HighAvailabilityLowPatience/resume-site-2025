@@ -22,21 +22,25 @@
     --popover: 0 0% 100%;
     --popover-foreground: 265 4% 12.9%;
 
-    /* Primary - Deep charcoal */
-    --primary: 266 4% 20.8%;
-    --primary-foreground: 248 0.3% 98.4%;
+    /* Primary - Rich teal */
+    --primary: 172 66% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Warm stone */
-    --secondary: 248 0.7% 96.8%;
+    /* Secondary - Warm cream */
+    --secondary: 40 30% 96%;
     --secondary-foreground: 266 4% 20.8%;
 
     /* Muted - Soft gray */
-    --muted: 248 0.7% 96.8%;
-    --muted-foreground: 257 4.6% 55.4%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    /* Accent - Subtle warm */
-    --accent: 248 0.7% 96.8%;
-    --accent-foreground: 266 4% 20.8%;
+    /* Accent - Vibrant coral */
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Highlight - Golden amber */
+    --highlight: 45 93% 47%;
+    --highlight-foreground: 0 0% 10%;
 
     --destructive: 27 24.5% 57.7%;
     --destructive-foreground: 0 0% 100%;

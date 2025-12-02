@@ -18,7 +18,8 @@ const Education = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Education */}
         <div className="animate-fade-in-up delay-100">
-          <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-muted-foreground mb-6">
+          <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
+            <span className="w-2 h-2 bg-accent rounded-full"></span>
             Education
           </h3>
 
@@ -33,7 +34,7 @@ const Education = () => {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {edu.year}
-                  {edu.honors && ` · ${edu.honors}`}
+                  {edu.honors && <span className="ml-2 px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">{edu.honors}</span>}
                 </p>
                 {edu.note && (
                   <p className="text-sm text-foreground/70 mt-2">{edu.note}</p>
@@ -45,7 +46,8 @@ const Education = () => {
 
         {/* Certifications */}
         <div className="animate-fade-in-up delay-200">
-          <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-muted-foreground mb-6">
+          <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
+            <span className="w-2 h-2 bg-accent rounded-full"></span>
             Certifications
           </h3>
 

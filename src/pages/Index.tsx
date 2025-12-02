@@ -28,14 +28,14 @@ const Index = () => {
         {/* <!-- SECTION: Header --> */}
         <Header />
 
-        {/* <!-- SECTION: Skills --> */}
-        <Skills />
+        {/* <!-- SECTION: Experience --> */}
+        <Experience />
 
         {/* <!-- SECTION: Projects --> */}
         <Projects />
 
-        {/* <!-- SECTION: Experience --> */}
-        <Experience />
+        {/* <!-- SECTION: Skills --> */}
+        <Skills />
 
         {/* <!-- SECTION: Education --> */}
         <Education />

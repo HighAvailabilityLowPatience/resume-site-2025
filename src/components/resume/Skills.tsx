@@ -31,7 +31,8 @@ const Skills = () => {
             style={{ animationDelay: `${(categoryIndex + 1) * 0.1}s` }}
           >
             {/* Category Title */}
-            <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+            <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 bg-accent rounded-full"></span>
               {category.title}
             </h3>
 
@@ -40,7 +41,7 @@ const Skills = () => {
               {category.items.map((skill, skillIndex) => (
                 <li
                   key={skillIndex}
-                  className="text-foreground/90 text-base transition-colors duration-200 hover:text-foreground"
+                  className="text-foreground/90 text-base transition-all duration-200 hover:text-primary hover:translate-x-1"
                 >
                   {skill}
                 </li>
