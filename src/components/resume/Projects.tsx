@@ -1,8 +1,9 @@
 import { resumeData } from "@/data/resumeData";
+import { ExternalLink } from "lucide-react";
 
 /**
  * <!-- SECTION: Projects -->
- * Project showcase with animated cards
+ * Project showcase with animated cards and repo links
  * EDIT: Add new projects in src/data/resumeData.ts
  * 
  * To add a new project, copy this structure to resumeData.ts:
@@ -11,6 +12,7 @@ import { resumeData } from "@/data/resumeData";
  *   description: "Short description of the project",
  *   tools: ["Tool1", "Tool2", "Tool3"],
  *   outcome: "Key outcome or impact",
+ *   repoUrl: "https://github.com/username/repo",
  * }
  */
 const Projects = () => {
@@ -26,18 +28,30 @@ const Projects = () => {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <article
+          <a
             key={project.name}
-            className="group p-6 bg-card border border-border rounded-lg hover-lift animate-fade-in-up print-break-avoid"
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block p-6 bg-card border border-border rounded-lg animate-fade-in-up print-break-avoid
+              transition-all duration-300 ease-out
+              hover:border-foreground/30 hover:bg-secondary/30 hover:shadow-xl hover:-translate-y-2
+              focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             style={{ animationDelay: `${(index + 1) * 0.1}s` }}
           >
-            {/* Project Name */}
-            <h3 className="text-xl font-serif font-medium text-foreground mb-3 group-hover:text-foreground/80 transition-colors duration-200">
-              {project.name}
-            </h3>
+            {/* Project Header */}
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <h3 className="text-xl font-serif font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                {project.name}
+              </h3>
+              <ExternalLink 
+                size={18} 
+                className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 flex-shrink-0 mt-1" 
+              />
+            </div>
 
             {/* Description */}
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4 group-hover:text-foreground/70 transition-colors duration-300">
               {project.description}
             </p>
 
@@ -46,7 +60,7 @@ const Projects = () => {
               {project.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="px-2 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded"
+                  className="px-2 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded transition-colors duration-300 group-hover:bg-foreground/10"
                 >
                   {tool}
                 </span>
@@ -54,13 +68,13 @@ const Projects = () => {
             </div>
 
             {/* Outcome */}
-            <div className="pt-4 border-t border-border">
+            <div className="pt-4 border-t border-border group-hover:border-foreground/20 transition-colors duration-300">
               <p className="text-sm text-foreground/80">
                 <span className="font-medium text-foreground">Impact: </span>
                 {project.outcome}
               </p>
             </div>
-          </article>
+          </a>
         ))}
       </div>
 
