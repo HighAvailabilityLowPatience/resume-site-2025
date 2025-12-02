@@ -1,9 +1,10 @@
 import { resumeData } from "@/data/resumeData";
 import { Download } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 /**
  * <!-- SECTION: Header -->
- * Contains name, title, intro, and Download PDF button
+ * Contains name, title, intro, headshot, and Download PDF button
  * EDIT: Update personal info in src/data/resumeData.ts
  */
 const Header = () => {
@@ -11,6 +12,15 @@ const Header = () => {
 
   const handleDownloadPDF = () => {
     window.print();
+  };
+
+  // Get initials for avatar fallback
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase();
   };
 
   return (
@@ -26,30 +36,45 @@ const Header = () => {
       </button>
 
       {/* Main Header Content */}
-      <div className="animate-fade-in-up">
-        {/* Name */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-foreground mb-4">
-          {personal.name}
-        </h1>
+      <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 animate-fade-in-up">
+        {/* Headshot */}
+        <Avatar className="w-28 h-28 md:w-36 md:h-36 border-2 border-border shadow-lg flex-shrink-0">
+          <AvatarImage 
+            src={personal.photoUrl} 
+            alt={`${personal.name} headshot`}
+            className="object-cover"
+          />
+          <AvatarFallback className="text-2xl md:text-3xl font-serif bg-secondary text-foreground">
+            {getInitials(personal.name)}
+          </AvatarFallback>
+        </Avatar>
 
-        {/* Title */}
-        <p className="text-xl md:text-2xl text-muted-foreground font-sans font-light mb-6">
-          {personal.title}
-        </p>
+        {/* Text Content */}
+        <div className="flex-1">
+          {/* Name */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-foreground mb-4">
+            {personal.name}
+          </h1>
 
-        {/* Quick Stats */}
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground mb-6 animate-fade-in delay-200">
-          <span>{personal.location}</span>
-          <span className="hidden sm:inline">•</span>
-          <span>{personal.yearsExperience} Years Experience</span>
-          <span className="hidden sm:inline">•</span>
-          <span className="text-foreground font-medium">{personal.availability}</span>
+          {/* Title */}
+          <p className="text-xl md:text-2xl text-muted-foreground font-sans font-light mb-6">
+            {personal.title}
+          </p>
+
+          {/* Quick Stats */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground mb-6 animate-fade-in delay-200">
+            <span>{personal.location}</span>
+            <span className="hidden sm:inline">•</span>
+            <span>{personal.yearsExperience} Years Experience</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="text-foreground font-medium">{personal.availability}</span>
+          </div>
+
+          {/* Intro */}
+          <p className="text-lg text-foreground/80 max-w-2xl leading-relaxed animate-fade-in delay-300">
+            {personal.intro}
+          </p>
         </div>
-
-        {/* Intro */}
-        <p className="text-lg text-foreground/80 max-w-2xl leading-relaxed animate-fade-in delay-300">
-          {personal.intro}
-        </p>
       </div>
     </header>
   );

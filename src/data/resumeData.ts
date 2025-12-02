@@ -16,6 +16,8 @@ export const resumeData = {
     location: "San Francisco, CA",
     yearsExperience: "8+",
     availability: "Open to Opportunities",
+    // EDIT: Replace with your photo URL or leave empty for initials fallback
+    photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
   },
 
   // =====================================================
@@ -71,24 +73,29 @@ export const resumeData = {
       description: "Led the migration of 50+ microservices from on-premise data centers to AWS, implementing Infrastructure as Code and reducing deployment time by 80%.",
       tools: ["AWS", "Terraform", "Kubernetes", "Jenkins"],
       outcome: "Reduced infrastructure costs by 40% and improved deployment frequency from monthly to daily.",
+      // EDIT: Add your project repo URL
+      repoUrl: "https://github.com/alexmorgan/cloud-migration",
     },
     {
       name: "Zero-Downtime Deployment Pipeline",
       description: "Architected and implemented a blue-green deployment strategy with automated rollback capabilities for a high-traffic e-commerce platform.",
       tools: ["GitLab CI", "ArgoCD", "Kubernetes", "Helm"],
       outcome: "Achieved 99.99% uptime and eliminated deployment-related incidents.",
+      repoUrl: "https://github.com/alexmorgan/zero-downtime-deploy",
     },
     {
       name: "Security Automation Framework",
       description: "Built an automated security scanning and compliance framework integrated into the CI/CD pipeline, catching vulnerabilities before production.",
       tools: ["Python", "Trivy", "SonarQube", "GitHub Actions"],
       outcome: "Reduced security vulnerabilities by 70% and achieved SOC 2 compliance.",
+      repoUrl: "https://github.com/alexmorgan/security-automation",
     },
     {
       name: "Observability Stack Implementation",
       description: "Designed and deployed a comprehensive monitoring and alerting solution providing real-time insights across all production services.",
       tools: ["Prometheus", "Grafana", "Loki", "PagerDuty"],
       outcome: "Reduced mean time to detection (MTTD) from hours to minutes.",
+      repoUrl: "https://github.com/alexmorgan/observability-stack",
     },
   ],
 
