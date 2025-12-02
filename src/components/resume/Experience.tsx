@@ -38,7 +38,7 @@ const Experience = () => {
             style={{ animationDelay: `${(index + 1) * 0.1}s` }}
           >
             {/* Timeline dot (hidden on mobile) */}
-            <div className="hidden md:block absolute left-0 top-2 w-2 h-2 bg-foreground rounded-full" />
+            <div className="hidden md:block absolute left-0 top-2 w-3 h-3 bg-primary rounded-full ring-4 ring-primary/20" />
 
             {/* Job Header */}
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
@@ -53,7 +53,7 @@ const Experience = () => {
               <span className="text-sm text-muted-foreground font-sans whitespace-nowrap">
                 {job.startDate} — {job.endDate}
                 {job.current && (
-                  <span className="ml-2 px-2 py-0.5 text-xs bg-foreground text-primary-foreground rounded">
+                  <span className="ml-2 px-2 py-0.5 text-xs bg-accent text-accent-foreground rounded-full font-medium">
                     Current
                   </span>
                 )}
