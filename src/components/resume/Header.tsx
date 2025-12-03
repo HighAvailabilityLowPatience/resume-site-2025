@@ -63,13 +63,24 @@ const Header = () => {
 
           {/* Quick Stats */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground mb-6 animate-fade-in delay-200">
-            <span>{personal.location}</span>
-            <span className="hidden sm:inline">•</span>
-            <span>{personal.yearsExperience} Years Experience</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="px-3 py-1 bg-primary/10 text-primary font-medium rounded-full">{personal.availability}</span>
-          </div>
+  <span>{personal.location}</span>
+  <span className="hidden sm:inline">•</span>
 
+  <span>{personal.yearsExperience} Years Experience</span>
+  <span className="hidden sm:inline">•</span>
+
+  <span className="px-3 py-1 bg-primary/10 text-primary font-medium rounded-full">
+    {personal.availability}
+  </span>
+
+  <span className="hidden sm:inline">•</span>
+
+  {/* Clearance — Option B (slightly emphasized text, no badge) */}
+  <span className="font-medium text-foreground">
+    {personal.clearance}
+  </span>
+</div>
+          
           {/* Intro */}
           <p className="text-lg text-foreground/80 max-w-2xl leading-relaxed animate-fade-in delay-300">
             {personal.intro}
