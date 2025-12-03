@@ -101,7 +101,7 @@ export const resumeData = {
   // =====================================================
   experience: [
     {
-      title: "Lead Systems Administrator (N6 Communications DLPO)",
+      title: "Lead Systems Administrator (N6 COMMS DLPO)",
       company: "US Navy.",
       location: "Charleston, SC",
       startDate: "Nov 2022",
@@ -117,7 +117,7 @@ export const resumeData = {
     {
       title: "Work Center Supervisor",
       company: "US Navy",
-      location: "Charleston, SC",
+      location: "Honolulu, HI",
       startDate: "Jan 2021",
       endDate: "Nov 2022",
       current: false,
@@ -131,8 +131,8 @@ export const resumeData = {
     {
       title: "Electronics Technician",
       company: "US Navy",
-      location: "Charleston, SC",
-      startDate: "Apr 2017",
+      location: "Honolulu, HI",
+      startDate: "Apr 2018",
       endDate: "Jan 2021",
       current: false,
       bullets: [
