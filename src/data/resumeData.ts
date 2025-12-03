@@ -10,10 +10,10 @@ export const resumeData = {
   // EDIT: Personal Information
   // =====================================================
   personal: {
-    name: "Alex Morgan",
-    title: "Senior DevOps Engineer",
-    intro: "Building resilient infrastructure and automating everything. Passionate about cloud-native technologies, CI/CD pipelines, and helping teams ship faster with confidence.",
-    location: "San Francisco, CA",
+    name: "Emmanuel Johnson",
+    title: "System Adminstrator/Junior Devops Engineer/Technical Project Manager",
+    intro: "TS/TSCI Cleared Professional building resilient infrastructure and automating processes. Passionate about cloud-native technologies, CI/CD pipelines, and helping teams ship faster with confidence.",
+    location: "Charlotte, NC",
     yearsExperience: "8+",
     availability: "Open to Opportunities",
     // EDIT: Replace with your photo URL or leave empty for initials fallback
@@ -24,10 +24,10 @@ export const resumeData = {
   // EDIT: Contact Information
   // =====================================================
   contact: {
-    email: "alex.morgan@email.com",
-    github: "github.com/alexmorgan",
-    linkedin: "linkedin.com/in/alexmorgan",
-    website: "alexmorgan.dev",
+    email: "Emmanueljohnso1998@gmail.com",
+    github: "https://github.com/HighAvailabilityLowPatience",
+    linkedin: "https://www.linkedin.com/in/emmanuel-johnsonn-a45826240/",
+    website: "emmanueljohnson.tech",
   },
 
   // =====================================================
@@ -37,23 +37,18 @@ export const resumeData = {
   skills: {
     cloud: [
       "AWS (EC2, EKS, Lambda, S3, RDS)",
-      "Azure (AKS, Functions, DevOps)",
-      "Google Cloud Platform (GKE, Cloud Run)",
-      "Multi-cloud Architecture",
     ],
     devops: [
       "Docker & Containerization",
-      "Kubernetes & Helm",
       "Terraform & Infrastructure as Code",
       "Ansible & Configuration Management",
-      "Jenkins, GitLab CI, GitHub Actions",
+      "Jenkins, GitLab CI, GitHub Actions (CI/CD)",
       "ArgoCD & GitOps",
     ],
     scripting: [
       "Python",
       "Bash / Shell Scripting",
       "YAML / JSON",
-      "Go (Golang)",
     ],
     systems: [
       "Linux Administration (Ubuntu, CentOS, RHEL)",
@@ -105,10 +100,10 @@ export const resumeData = {
   // =====================================================
   experience: [
     {
-      title: "Senior DevOps Engineer",
-      company: "TechScale Inc.",
-      location: "San Francisco, CA",
-      startDate: "2021",
+      title: "Lead Systems Administrator (N6 Communications DLPO)",
+      company: "US Navy.",
+      location: "Charleston, SC",
+      startDate: "Nov 2022",
       endDate: "Present",
       current: true,
       bullets: [
@@ -119,11 +114,11 @@ export const resumeData = {
       ],
     },
     {
-      title: "DevOps Engineer",
-      company: "CloudFirst Solutions",
-      location: "Seattle, WA",
-      startDate: "2018",
-      endDate: "2021",
+      title: "Work Center Supervisor",
+      company: "US Navy",
+      location: "Charleston, SC",
+      startDate: "Jan 2021",
+      endDate: "Nov 2022",
       current: false,
       bullets: [
         "Designed and maintained CI/CD pipelines for 50+ development teams",
@@ -133,11 +128,11 @@ export const resumeData = {
       ],
     },
     {
-      title: "Systems Administrator",
-      company: "DataCore Systems",
-      location: "Portland, OR",
-      startDate: "2016",
-      endDate: "2018",
+      title: "Electronics Technician",
+      company: "US Navy",
+      location: "Charleston, SC",
+      startDate: "Apr 2017",
+      endDate: "Jan 2021",
       current: false,
       bullets: [
         "Managed Linux server infrastructure supporting 500+ internal users",
@@ -153,12 +148,10 @@ export const resumeData = {
   // =====================================================
   education: [
     {
-      degree: "B.S. in Computer Science",
-      school: "University of Washington",
-      location: "Seattle, WA",
-      year: "2016",
-      honors: "Cum Laude",
-      note: "Focus on Distributed Systems and Network Security",
+      degree: "B.S. in Information Technology",
+      school: "Western Governers University",
+      location: "N/A",
+      year: "Fall 2028",
     },
   ],
 
@@ -167,24 +160,24 @@ export const resumeData = {
   // =====================================================
   certifications: [
     {
-      name: "AWS Solutions Architect Professional",
-      issuer: "Amazon Web Services",
-      year: "2023",
+      name: "Security+",
+      issuer: "Comp-Tia",
+      year: "2024",
     },
     {
-      name: "Certified Kubernetes Administrator (CKA)",
-      issuer: "Cloud Native Computing Foundation",
-      year: "2022",
+      name: "Technical Support Fundamentals",
+      issuer: "Google",
+      year: "2024",
     },
     {
-      name: "HashiCorp Certified Terraform Associate",
-      issuer: "HashiCorp",
-      year: "2021",
+      name: "Project Management Professional",
+      issuer: "Project Managment Institute (PMI),
+      year: "2026",
     },
     {
-      name: "Azure DevOps Engineer Expert",
-      issuer: "Microsoft",
-      year: "2020",
+     // name: "Azure DevOps Engineer Expert",
+     // issuer: "Microsoft",
+    //  year: "2020",
     },
   ],
 };
