@@ -16,6 +16,7 @@ export const resumeData = {
     location: "Charlotte, NC",
     yearsExperience: "8+",
     availability: "Open to Opportunities",
+    Clearance: "Active TS/SCI Clearance",
     // EDIT: Replace with your photo URL or leave empty for initials fallback
     photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
   },
@@ -171,8 +172,8 @@ export const resumeData = {
     },
     {
       name: "Project Management Professional",
-      issuer: "Project Managment Institute (PMI),
-      year: "2026",
+      issuer: "Project Managment Institute (PMI)",
+      year: "Target 2026",
     },
     {
      // name: "Azure DevOps Engineer Expert",
