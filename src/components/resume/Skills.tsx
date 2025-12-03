@@ -10,7 +10,7 @@ const Skills = () => {
 
   const skillCategories = [
     { title: "Cloud Platforms", items: skills.cloud },
-    { title: "DevOps & Tools", items: skills.devops },
+    { title: "Tools", items: skills.devops },
     { title: "Scripting & Languages", items: skills.scripting },
     { title: "Systems & Infrastructure", items: skills.systems },
   ];
