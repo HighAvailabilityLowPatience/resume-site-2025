@@ -122,10 +122,10 @@ export const resumeData = {
       endDate: "Nov 2022",
       current: false,
       bullets: [
-        "Designed and maintained CI/CD pipelines for 50+ development teams",
-        "Led Docker and Kubernetes adoption across the engineering organization",
-        "Automated infrastructure provisioning reducing setup time from days to hours",
-        "Mentored junior engineers on DevOps best practices and cloud technologies",
+        "Engineered and executed weekly preventative maintenance plans for critical navigation systems, increasing efficiency and ensuring equipment readiness",
+        "Managed a 4,000-item maintenance program, coordinating corrective and periodic maintenance while optimizing workflow across the division",
+        "Performed rigorous QA inspections on lockout/tagout procedures during weekly maintenance operations, strengthening safety and procedural accuracy",
+        "Led the division’s QA SUBSAFE program, enforcing strict safety and compliance standards to protect mission-critical operations and personnel",
       ],
     },
     {
@@ -136,10 +136,8 @@ export const resumeData = {
       endDate: "Jan 2021",
       current: false,
       bullets: [
-        "Managed Linux server infrastructure supporting 500+ internal users",
-        "Implemented configuration management with Ansible and Puppet",
-        "Designed backup and disaster recovery procedures achieving 99.9% data availability",
-        "Automated routine tasks reducing manual intervention by 60%",
+        "Performed 12,000+ hours of preventive and corrective maintenance on critical 688-class submarine systems, including CAMS, WRN-6 and ring-laser gyrocompasses, Interior Communications, tank level indicators, pressure switches, VMS, and BPS-15 radar",
+        "Applied advanced troubleshooting methods to complex subsystem failures, improving component reliability and reducing repeat issues across multiple deployment cycles",
       ],
     },
   ],
