@@ -11,8 +11,8 @@ export const resumeData = {
   // =====================================================
   personal: {
     name: "Emmanuel Johnson",
-    title: "System Adminstrator/Junior Devops Engineer/Technical Project Manager",
-    intro: "TS/TSCI Cleared Professional building resilient infrastructure and automating processes. Passionate about cloud-native technologies, CI/CD pipelines, and helping teams ship faster with confidence.",
+    title: "DevOps & Cloud Infrastructure Engineer | Technical Project Lead",
+    intro: "Building automated, scalable systems — and leading the projects that deliver them. Passionate about cloud-native technologies, CI/CD pipelines, and helping teams ship faster with confidence.",
     location: "Charlotte, NC",
     yearsExperience: "8+",
     availability: "Open to Opportunities",
