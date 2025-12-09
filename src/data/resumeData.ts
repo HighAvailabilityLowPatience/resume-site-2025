@@ -108,10 +108,10 @@ export const resumeData = {
       endDate: "Present",
       current: true,
       bullets: [
-        "Lead a team of 5 DevOps engineers managing infrastructure for 200+ microservices",
-        "Architected multi-region Kubernetes clusters handling 10M+ daily requests",
-        "Reduced cloud spending by 35% through optimization and reserved capacity planning",
-        "Implemented GitOps workflows increasing deployment velocity by 300%",
+        "Managed user accounts and permissions for 1,200+ personnel, enforcing proper access control and streamlining onboarding/offboarding to reduce setup time by 20%",
+        "Implemented and maintained GPOs and system updates across all workstations and servers, ensuring compliance and network stability",
+        "Oversaw classified and unclassified communication networks with 99.9% uptime, performing DHCP, DNS, VLAN configuration, and Layer 3 troubleshooting",
+        "Trained and mentored junior personnel on system administration, troubleshooting, and security compliance, reducing incident resolution time by 30%",
       ],
     },
     {
