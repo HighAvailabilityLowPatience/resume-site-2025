@@ -28,7 +28,7 @@ export const resumeData = {
     email: "Emmanueljohnso1998@gmail.com",
     github: "https://github.com/HighAvailabilityLowPatience",
     linkedin: "https://www.linkedin.com/in/emmanuel-johnsonn-a45826240/",
-    website: "emmanueljohnson.tech",
+    website: "emmanueljohnson.xyz",
   },
 
   // =====================================================
