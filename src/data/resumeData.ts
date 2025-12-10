@@ -73,10 +73,10 @@ export const resumeData = {
       repoUrl: "https://github.com/HighAvailabilityLowPatience/inference-engine.git",
     },
     {
-      name: "Personal Enterprise-Style Home Lab (HALP)",
+      name: "HALP – Hybrid Home Lab Platform",
       description: "Engineered a full enterprise-style home lab with virtualized infrastructure, Windows AD domain services, segmented VLAN networking, hybrid-cloud backups, and automated monitoring. Designed to mirror real-world DevOps, IT operations, and cloud integration workflows.",
       tools: ["Proxmox VE", "Windows Server + Active Directory", "TP-Link VLANs", "Docker & Docker Compose", "FastAPI", "Python", "Cron (Linux)", "Windows Task Scheduler", "AWS S3, EC2, CloudWatch, EventBridge", "Prometheus", "Grafana", "WireGuard VPN"],
-      outcome: "Achieved 99.99% uptime and eliminated deployment-related incidents.",
+      outcome: "Built a production-style environment including AD-backed authentication, VLAN-based isolation, automated backup pipelines, and observability across hypervisors, servers, and containers. The environment behaves like a trimmed-down corporate network, showcasing practical engineering depth and real operational skill.",
       repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
     },
     {
