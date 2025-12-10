@@ -68,7 +68,7 @@ export const resumeData = {
       name: "Distributed Telemetry + Inference Platform",
       description: "Built a distributed telemetry-collection system with ML inference: node-agents push resource-usage & textual payloads to a FastAPI backend, which runs a transformer-based sentiment + severity model locally, logs results, and surfaces aggregated network/mood health via a React UI.",
       tools: ["Python", "FastAPI", "Docker", "Docker Compose", "Hugging Face Transformers", "PyTorch", "SQLite (or local DB)", "React", "TypeScript", "Docker Agent"],
-      outcome: "Built with Docker, FastAPI, PyTorch (Transformers), and React. Deployed as multi-service containers, demonstrating full-stack integration and DevOps maturity",
+      outcome: "Enabled real-time telemetry ingestion + sentiment inference across multiple nodes; delivered a demo prototype with working /predict and /health endpoints, full containerization, and a UI for system health — demonstrating capability across infrastructure, ML, monitoring, and frontend stacks.",
       // EDIT: Add your project repo URL
       repoUrl: "https://github.com/HighAvailabilityLowPatience/inference-engine.git",
     },
