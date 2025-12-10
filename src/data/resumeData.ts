@@ -73,18 +73,18 @@ export const resumeData = {
       repoUrl: "https://github.com/HighAvailabilityLowPatience/inference-engine.git",
     },
     {
-      name: "Zero-Downtime Deployment Pipeline",
-      description: "Architected and implemented a blue-green deployment strategy with automated rollback capabilities for a high-traffic e-commerce platform.",
-      tools: ["GitLab CI", "ArgoCD", "Kubernetes", "Helm"],
+      name: "Personal Enterprise-Style Home Lab (HALP)",
+      description: "Engineered a full enterprise-style home lab with virtualized infrastructure, Windows AD domain services, segmented VLAN networking, hybrid-cloud backups, and automated monitoring. Designed to mirror real-world DevOps, IT operations, and cloud integration workflows.",
+      tools: ["Proxmox VE", "Windows Server + Active Directory", "TP-Link VLANs", "Docker & Docker Compose", "FastAPI", "Python", "Cron (Linux)", "Windows Task Scheduler", "AWS S3, EC2, CloudWatch, EventBridge", "Prometheus", "Grafana", "WireGuard VPN""],
       outcome: "Achieved 99.99% uptime and eliminated deployment-related incidents.",
-      repoUrl: "",
+      repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
     },
     {
       name: "Security Automation Framework",
       description: "Built an automated security scanning and compliance framework integrated into the CI/CD pipeline, catching vulnerabilities before production.",
       tools: ["Python", "Trivy", "SonarQube", "GitHub Actions"],
       outcome: "Reduced security vulnerabilities by 70% and achieved SOC 2 compliance.",
-      repoUrl: "https://github.com/alexmorgan/security-automation",
+      repoUrl: "http://www.emmanueljohnson.xyz/",
     },
     {
       name: "Observability Stack Implementation",
