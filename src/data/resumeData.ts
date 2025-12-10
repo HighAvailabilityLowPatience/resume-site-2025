@@ -77,7 +77,7 @@ export const resumeData = {
       description: "Architected and implemented a blue-green deployment strategy with automated rollback capabilities for a high-traffic e-commerce platform.",
       tools: ["GitLab CI", "ArgoCD", "Kubernetes", "Helm"],
       outcome: "Achieved 99.99% uptime and eliminated deployment-related incidents.",
-      repoUrl: "https://github.com/alexmorgan/zero-downtime-deploy",
+      repoUrl: "",
     },
     {
       name: "Security Automation Framework",
