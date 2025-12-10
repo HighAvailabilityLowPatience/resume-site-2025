@@ -65,12 +65,12 @@ export const resumeData = {
   // =====================================================
   projects: [
     {
-      name: "Cloud Migration Platform",
-      description: "Led the migration of 50+ microservices from on-premise data centers to AWS, implementing Infrastructure as Code and reducing deployment time by 80%.",
-      tools: ["AWS", "Terraform", "Kubernetes", "Jenkins"],
-      outcome: "Reduced infrastructure costs by 40% and improved deployment frequency from monthly to daily.",
+      name: "Distributed Telemetry + Inference Platform",
+      description: "Built a distributed telemetry-collection system with ML inference: node-agents push resource-usage & textual payloads to a FastAPI backend, which runs a transformer-based sentiment + severity model locally, logs results, and surfaces aggregated network/mood health via a React UI.",
+      tools: ["Python", "FastAPI", "Docker", "Docker Compose", "Hugging Face Transformers", "PyTorch", "SQLite (or local DB)", "React", "TypeScript", "Docker Agent"],
+      outcome: "Built with Docker, FastAPI, PyTorch (Transformers), and React. Deployed as multi-service containers, demonstrating full-stack integration and DevOps maturity",
       // EDIT: Add your project repo URL
-      repoUrl: "https://github.com/alexmorgan/cloud-migration",
+      repoUrl: "https://github.com/HighAvailabilityLowPatience/inference-engine.git",
     },
     {
       name: "Zero-Downtime Deployment Pipeline",
