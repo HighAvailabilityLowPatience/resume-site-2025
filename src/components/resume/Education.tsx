@@ -34,11 +34,7 @@ const Education = () => {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {edu.year}
-                  {edu.honors && <span className="ml-2 px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">{edu.honors}</span>}
                 </p>
-                {edu.note && (
-                  <p className="text-sm text-foreground/70 mt-2">{edu.note}</p>
-                )}
               </div>
             ))}
           </div>
