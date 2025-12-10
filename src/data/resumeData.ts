@@ -75,7 +75,7 @@ export const resumeData = {
     {
       name: "Personal Enterprise-Style Home Lab (HALP)",
       description: "Engineered a full enterprise-style home lab with virtualized infrastructure, Windows AD domain services, segmented VLAN networking, hybrid-cloud backups, and automated monitoring. Designed to mirror real-world DevOps, IT operations, and cloud integration workflows.",
-      tools: ["Proxmox VE", "Windows Server + Active Directory", "TP-Link VLANs", "Docker & Docker Compose", "FastAPI", "Python", "Cron (Linux)", "Windows Task Scheduler", "AWS S3, EC2, CloudWatch, EventBridge", "Prometheus", "Grafana", "WireGuard VPN""],
+      tools: ["Proxmox VE", "Windows Server + Active Directory", "TP-Link VLANs", "Docker & Docker Compose", "FastAPI", "Python", "Cron (Linux)", "Windows Task Scheduler", "AWS S3, EC2, CloudWatch, EventBridge", "Prometheus", "Grafana", "WireGuard VPN"],
       outcome: "Achieved 99.99% uptime and eliminated deployment-related incidents.",
       repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
     },
