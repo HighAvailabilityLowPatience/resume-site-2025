@@ -44,7 +44,6 @@ export const resumeData = {
       "Terraform & Infrastructure as Code",
       "Ansible & Configuration Management",
       "Jenkins, GitLab CI, GitHub Actions (CI/CD)",
-      "ArgoCD & GitOps",
     ],
     scripting: [
       "Python",
@@ -52,6 +51,7 @@ export const resumeData = {
       "YAML / JSON",
     ],
     systems: [
+      "Windows Server & Active Directory (Domains, Group Policy)",
       "Linux Administration (Ubuntu, CentOS, RHEL)",
       "Networking (TCP/IP, DNS, Load Balancing)",
       "Security (IAM, Secrets Management, SSL/TLS)",
