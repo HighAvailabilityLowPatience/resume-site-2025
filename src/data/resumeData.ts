@@ -80,18 +80,12 @@ export const resumeData = {
       repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
     },
     {
-      name: "Security Automation Framework",
-      description: "Built an automated security scanning and compliance framework integrated into the CI/CD pipeline, catching vulnerabilities before production.",
-      tools: ["Python", "Trivy", "SonarQube", "GitHub Actions"],
-      outcome: "Reduced security vulnerabilities by 70% and achieved SOC 2 compliance.",
-      repoUrl: "http://www.emmanueljohnson.xyz/",
-    },
-    {
-      name: "Observability Stack Implementation",
-      description: "Designed and deployed a comprehensive monitoring and alerting solution providing real-time insights across all production services.",
-      tools: ["Prometheus", "Grafana", "Loki", "PagerDuty"],
-      outcome: "Reduced mean time to detection (MTTD) from hours to minutes.",
-      repoUrl: "https://github.com/alexmorgan/observability-stack",
+     name: "Nautilus Cloud Endpoint Modernization",
+description:
+  "Led the command-wide transition from legacy NMCI/ONE-Net systems to the Navy’s Nautilus cloud-managed endpoint model, coordinating planning, execution, and user onboarding for a 940-person enterprise environment.",
+tools: ["Windows Endpoint Management", "Zero-Trust Security Controls", "DoD Cloud Compliance Framework", "Project Scheduling & Stakeholder Coordination", "Troubleshooting & User Support Operations"],
+outcome: "Executed modernization of 264 workstations and improved login times by 60%+. Strengthened endpoint security posture, aligned infrastructure with DoD zero-trust standards, reduced support overhead, and increased system uptime and user satisfaction across departments. Served as a key coordinator ensuring smooth migration, application compatibility, and uninterrupted mission readiness.",
+repoUrl: null, // Classified / internal project, so no repo
     },
   ],
 
