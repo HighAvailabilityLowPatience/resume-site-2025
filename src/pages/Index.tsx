@@ -32,9 +32,7 @@ const Index = () => {
         <Experience />
 
         {/* <!-- SECTION: Projects --> */}
-        <div className="print-break-before">
-          <Projects />
-        </div>
+        <Projects />
 
         {/* <!-- SECTION: Skills --> */}
         <Skills />
