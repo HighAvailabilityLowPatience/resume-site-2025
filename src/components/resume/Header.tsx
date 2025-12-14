@@ -16,18 +16,8 @@ const Header = () => {
 
   return (
     <header className="relative pb-section-sm border-b border-border">
-      {/* Download PDF Button - Top Right */}
-      <button
-        onClick={handleDownloadPDF}
-        className="no-print absolute right-0 top-4 flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5"
-        aria-label="Download PDF"
-      >
-        <Download size={16} />
-        <span>Download PDF</span>
-      </button>
-
       {/* Main Header Content */}
-      <div className="animate-fade-in-up pr-0 md:pr-40">
+      <div className="animate-fade-in-up">
         {/* Name */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-foreground mb-4">
           {personal.name}
