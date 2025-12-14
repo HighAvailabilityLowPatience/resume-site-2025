@@ -262,6 +262,11 @@
 }
 
 @media print {
+/* Let browser decide page breaks (GLOBAL RESET) */
+  * {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  } 
   * {
     animation: none !important;
     transition: none !important;
@@ -272,8 +277,13 @@
   body {
     background: white !important;
     color: black !important;
-    font-size: 11pt !important;
+    font-size: 12.5pt !important;
     line-height: 1.4 !important;
+  }
+  
+  #root{ 
+   padding: 0.5in !important;
+   max-width: none !important;
   }
 
   .no-print {
