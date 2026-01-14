@@ -165,8 +165,8 @@ repoUrl: null, // Classified / internal project, so no repo
       year: "2024",
     },
     {
-      name: "Project Management Professional",
-      issuer: "Project Managment Institute (PMI)",
+      name: "AWS Certified Developer - Associate",
+      issuer: "Amazon Web Services",
       year: "Target 2026",
     },
   ],
