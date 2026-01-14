@@ -49,6 +49,8 @@ export const resumeData = {
       "Python",
       "Bash / Shell Scripting",
       "YAML / JSON",
+      "HTML",
+      "CSS",
     ],
     systems: [
       "Windows Server & Active Directory (Domains, Group Policy)",
