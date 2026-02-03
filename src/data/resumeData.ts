@@ -13,7 +13,7 @@ export const resumeData = {
     name: "Emmanuel Johnson",
     title: "DevOps & Cloud Infrastructure Engineer | Technical Project Lead",
     intro: "Building automated, scalable systems — and leading the projects that deliver them. Passionate about cloud-native technologies, CI/CD pipelines, and helping teams ship faster with confidence.",
-    location: "Charlotte, NC",
+    location: "Reston, VA",
     yearsExperience: "8+",
     availability: "Open to Opportunities",
     clearance: "Active TS/SCI Clearance",
