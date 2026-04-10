@@ -1,0 +1,239 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "last_updated": "2026-04-10",
+    "notes": "Primary structured data source for resume generation. Only update when new measurable impact or tools are added."
+  },
+
+  "identity": {
+    "name": "Emmanuel Johnson",
+    "title": "DevOps / Cloud Engineer",
+    "location": "South Carolina, USA",
+    "clearance": "Active Clearance (DoD)",
+    "portfolio": "https://emmanueljohnson.xyz/"
+  },
+
+  "skills": {
+    "cloud": ["AWS"],
+    "iac": ["Terraform", "Ansible"],
+    "CI/CD": ["GitHub Actions", "Jenkins"],
+    "containers": ["Docker"],
+    "monitoring": ["Grafana", "Prometheus"],
+    "programming": ["JavaScript", "Node.js"],
+    "frameworks": ["Express.js"],    
+    "scripting": ["PowerShell", "Bash"],
+    "systems": ["Linux", "Windows Active Directory"],
+    "virtualization": ["Proxmox", "VMware"],
+    "networking": ["DHCP", "DNS", "VLANs"],
+    "other": ["Git"]
+  },
+
+  "skills_map": {
+    "AWS": [
+      "Designed VPCs, EC2 instances, IAM roles, S3 storage, Lambda functions, and EventBridge automation",
+      "Implemented secure and scalable cloud environments for lab and project use"
+    ],
+    "Terraform": [
+      "Automated infrastructure provisioning and environment setup",
+      "Reduced deployment time by 40% in lab environments"
+    ],
+    "Ansible": [
+      "Configured Linux servers and automated deployments",
+      "Standardized environment provisioning workflows"
+    ],
+    "CI/CD": [
+      "Built GitHub Actions pipelines for automated testing and deployment",
+      "Reduced manual deployment time by 40%"
+    ],
+    "Docker": [
+      "Containerized applications for consistent deployment across environments"
+    ],
+    "PowerShell": [
+      "Automated administrative tasks and system operations"
+    ],
+    "Bash": [
+      "Developed scripts for monitoring, patching, and backups"
+    ],
+    "Active Directory": [
+      "Managed identity and access for 1,200+ users",
+      "Implemented GPO policies for system compliance"
+    ],
+    "JavaScript": [
+  "Developed backend logic and API functionality using JavaScript in Node.js environments",
+  "Handled asynchronous operations, data processing, and API integrations"
+],
+"Node.js": [
+  "Built and debugged backend services using Node.js",
+  "Tested and validated API functionality in development environments"
+],
+"Express.js": [
+  "Developed REST APIs using Express.js",
+  "Implemented routing, middleware, and request handling",
+  "Tested and debugged API endpoints to ensure reliability and correct data flow"
+]
+  },
+
+  "experience": [
+    {
+      "company": "United States Navy",
+      "role": "System Administrator / Network Administrator",
+      "start": "2022-11",
+      "end": "Present",
+      "scope": {
+        "users_supported": "1200+",
+        "environment": "Hybrid classified and unclassified networks",
+        "team_size": "Small team with cross-functional collaboration"
+      },
+      "tools": [
+        "Active Directory",
+        "GPO",
+        "Linux",
+        "PowerShell",
+        "Bash",
+        "DHCP",
+        "DNS",
+        "VLANs",
+        "Grafana",
+        "Prometheus"
+      ],
+      "bullets": [
+        {
+          "action": "Managed user accounts and access control",
+          "tools": ["Active Directory", "GPO"],
+          "result": "Reduced onboarding and offboarding time",
+          "metrics": "20% for 1,200+ users"
+        },
+        {
+          "action": "Maintained network infrastructure across classified and unclassified environments",
+          "tools": ["DHCP", "DNS", "VLANs"],
+          "result": "Achieved high system reliability",
+          "metrics": "99.9% uptime"
+        },
+        {
+          "action": "Automated administrative and lab environment tasks",
+          "tools": ["PowerShell", "Bash"],
+          "result": "Improved operational efficiency and deployment consistency"
+        },
+        {
+          "action": "Implemented monitoring and incident response workflows",
+          "tools": ["Grafana", "Prometheus"],
+          "result": "Improved system visibility and response readiness"
+        },
+        {
+          "action": "Trained and mentored junior personnel",
+          "tools": ["Documentation", "SOP development"],
+          "result": "Reduced incident resolution time",
+          "metrics": "30%"
+        }
+      ]
+    },
+    {
+      "company": "United States Navy",
+      "role": "Electronics Technician",
+      "start": "2018-06",
+      "end": "2022-11",
+      "scope": {
+        "systems_supported": "Advanced navigation systems",
+        "inventory_value": "$2M",
+        "team_size": "Technical team environment"
+      },
+      "tools": ["Diagnostics", "Calibration Equipment"],
+      "bullets": [
+        {
+          "action": "Maintained critical navigation systems",
+          "tools": ["GPS", "Sonar", "Inertial Systems"],
+          "result": "Achieved full operational readiness",
+          "metrics": "100%"
+        },
+        {
+          "action": "Performed preventative maintenance",
+          "tools": ["Diagnostics", "Repair protocols"],
+          "result": "Reduced system failures",
+          "metrics": "35%"
+        },
+        {
+          "action": "Managed inventory of electronic systems",
+          "tools": ["Inventory systems"],
+          "result": "Maintained accountability",
+          "metrics": "$2M inventory, zero discrepancies"
+        },
+        {
+          "action": "Trained junior technicians",
+          "tools": ["Technical instruction"],
+          "result": "Improved team capability and certification readiness",
+          "metrics": "8 personnel trained"
+        }
+      ]
+    }
+  ],
+
+"projects": [
+  {
+    "name": "Node.js API Service",
+    "tools": ["Node.js", "Express", "Docker"],
+    "bullets": [
+      "Developed REST API using Node.js and Express with structured routing and middleware",
+      "Tested and debugged API endpoints to ensure reliability and correct data handling",
+      "Containerized service using Docker for consistent deployment"
+    ]
+  },
+  {
+    "name": "Infrastructure as Code Environments",
+    "tools": ["Terraform", "Ansible", "Linux"],
+    "bullets": [
+      "Built automated infrastructure environments for provisioning and configuration of Linux servers",
+      "Standardized deployments using infrastructure as code practices"
+    ]
+  },
+  {
+    "name": "CI/CD Pipeline Automation",
+    "tools": ["GitHub Actions", "Docker"],
+    "bullets": [
+      "Developed CI/CD pipelines for containerized applications",
+      "Reduced manual deployment time by 40%"
+    ]
+  },
+  {
+    "name": "AWS Cloud Architecture Projects",
+    "tools": ["VPC", "EC2", "IAM", "S3", "Lambda", "EventBridge"],
+    "bullets": [
+      "Designed and implemented AWS cloud environments with secure networking and automation",
+      "Developed serverless automation and backup workflows"
+    ]
+  },
+  {
+    "name": "Monitoring and Observability Stack",
+    "tools": ["Grafana", "Prometheus"],
+    "bullets": [
+      "Implemented monitoring dashboards and alerting systems",
+      "Improved system performance visibility"
+    ]
+  }
+]
+
+  "achievements": [
+    "Reduced onboarding time by 20% for 1,200+ users",
+    "Maintained 99.9% uptime across critical network environments",
+    "Reduced login times by 60%+ for 940 users through cloud migration",
+    "Reduced incident resolution time by 30% through training and documentation",
+    "Reduced system failures by 35% via preventative maintenance",
+    "Reduced deployment time by 40% through CI/CD automation",
+    "Managed $2M inventory with zero discrepancies"
+  ],
+
+  "certifications": [
+    "CompTIA Security+",
+    "Google Technical Support Fundamentals",
+    "Certified Electronics Technician (Journeyman)"
+  ],
+
+  "target_roles": [
+    "DevOps Engineer",
+    "Cloud Engineer",
+    "Platform Engineer",
+    "Site Reliability Engineer",
+    "Software Engineer",
+    "Project Manager"
+    
+  ]
+}
