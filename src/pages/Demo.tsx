@@ -310,25 +310,29 @@ const DisplayWindow = ({
   icon: typeof Radio;
   accent: "primary" | "accent";
   children: React.ReactNode;
-}) => (
-  <div className="group relative rounded-xl border border-border bg-card/40 backdrop-blur-sm overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 animate-fade-in-up">
-    {/* Corner brackets */}
-    <span className={`absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-${accent}/60`} />
-    <span className={`absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-${accent}/60`} />
-    <span className={`absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-${accent}/60`} />
-    <span className={`absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-${accent}/60`} />
+}) => {
+  const bracketColor = accent === "primary" ? "border-primary/60" : "border-accent/60";
+  const iconColor = accent === "primary" ? "text-primary" : "text-accent";
+  return (
+    <div className="group relative rounded-xl border border-border bg-card/40 backdrop-blur-sm overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 animate-fade-in-up">
+      {/* Corner brackets */}
+      <span className={`absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 ${bracketColor}`} />
+      <span className={`absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 ${bracketColor}`} />
+      <span className={`absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 ${bracketColor}`} />
+      <span className={`absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 ${bracketColor}`} />
 
-    <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-card/60">
-      <div className="flex items-center gap-2">
-        <Icon className={`w-4 h-4 text-${accent}`} />
-        <h3 className="text-sm font-mono uppercase tracking-widest text-foreground">{title}</h3>
+      <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-card/60">
+        <div className="flex items-center gap-2">
+          <Icon className={`w-4 h-4 ${iconColor}`} />
+          <h3 className="text-sm font-mono uppercase tracking-widest text-foreground">{title}</h3>
+        </div>
+        <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+          {subtitle}
+        </span>
       </div>
-      <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-        {subtitle}
-      </span>
+      <div className="p-6">{children}</div>
     </div>
-    <div className="p-6">{children}</div>
-  </div>
-);
+  );
+};
 
 export default Demo;
