@@ -5,8 +5,7 @@ import { ArrowLeft, Activity, Cpu, Radio, Shield, Zap, AlertTriangle, CheckCircl
 /**
  * DEMO PAGE
  * =========
- * Futuristic dashboard demo with two display windows and a scrolling alert center.
- * Styled to match the resume aesthetic with added cyber/dashboard accents.
+ * Mission-control dashboard with two embedded live windows and a streaming alert center.
  */
 
 type AlertLevel = "info" | "success" | "warning" | "critical";
@@ -47,19 +46,6 @@ const Demo = () => {
       time: new Date(Date.now() - (SEED_ALERTS.length - i) * 4000).toLocaleTimeString("en-US", { hour12: false }),
     }))
   );
-  const [pulse, setPulse] = useState(0);
-  const [throughput, setThroughput] = useState(847);
-  const [uptime, setUptime] = useState(99.982);
-
-  // Simulate live telemetry
-  useEffect(() => {
-    const tick = setInterval(() => {
-      setPulse((p) => (p + 1) % 100);
-      setThroughput((t) => Math.max(600, Math.min(1200, t + (Math.random() - 0.5) * 40)));
-      setUptime((u) => +(u + (Math.random() - 0.5) * 0.002).toFixed(3));
-    }, 800);
-    return () => clearInterval(tick);
-  }, []);
 
   // Simulate streaming alerts
   useEffect(() => {
@@ -132,97 +118,24 @@ const Demo = () => {
           </p>
         </div>
 
-        {/* Two display windows */}
+        {/* Two display windows with embedded iframes */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          {/* Window 1 — Network Throughput */}
           <DisplayWindow
-            title="Network Throughput"
+            title="Astro Calc"
             subtitle="NODE.MESH-A"
             icon={Radio}
             accent="primary"
           >
-            <div className="space-y-6">
-              <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-serif font-medium text-foreground tabular-nums">
-                  {throughput.toFixed(0)}
-                </span>
-                <span className="text-sm text-muted-foreground font-mono">Mbps</span>
-              </div>
-
-              {/* Animated waveform bars */}
-              <div className="flex items-end gap-1 h-24">
-                {Array.from({ length: 32 }).map((_, i) => {
-                  const h = 20 + Math.abs(Math.sin((pulse + i) * 0.3)) * 80;
-                  return (
-                    <div
-                      key={i}
-                      className="flex-1 bg-gradient-to-t from-primary/40 to-primary rounded-sm transition-all duration-300"
-                      style={{ height: `${h}%` }}
-                    />
-                  );
-                })}
-              </div>
-
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
-                <Stat label="Packets" value="2.4M" />
-                <Stat label="Latency" value="42ms" />
-                <Stat label="Loss" value="0.01%" />
-              </div>
-            </div>
+            <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" />
           </DisplayWindow>
 
-          {/* Window 2 — System Integrity */}
           <DisplayWindow
-            title="System Integrity"
+            title="Change Calc"
             subtitle="CORE.PRIMARY"
             icon={Shield}
             accent="accent"
           >
-            <div className="space-y-6">
-              <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-serif font-medium text-foreground tabular-nums">
-                  {uptime.toFixed(3)}
-                </span>
-                <span className="text-sm text-muted-foreground font-mono">% uptime</span>
-              </div>
-
-              {/* Radial-style indicator */}
-              <div className="relative h-24 flex items-center justify-center">
-                <svg viewBox="0 0 200 100" className="w-full h-full">
-                  <path
-                    d="M 20 90 A 80 80 0 0 1 180 90"
-                    fill="none"
-                    stroke="hsl(var(--muted))"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 20 90 A 80 80 0 0 1 180 90"
-                    fill="none"
-                    stroke="hsl(var(--accent))"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeDasharray="251"
-                    strokeDashoffset={251 - (251 * uptime) / 100}
-                    className="transition-all duration-700"
-                  />
-                  <text
-                    x="100"
-                    y="80"
-                    textAnchor="middle"
-                    className="fill-foreground font-mono text-xs"
-                  >
-                    OPTIMAL
-                  </text>
-                </svg>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
-                <Stat label="Nodes" value="148/148" />
-                <Stat label="CPU" value="34%" />
-                <Stat label="Threats" value="0" />
-              </div>
-            </div>
+            <IframeFrame src="https://change-calc.ngrok.app" title="Change Calc" />
           </DisplayWindow>
         </div>
 
@@ -245,7 +158,6 @@ const Demo = () => {
           </div>
 
           <div className="relative h-72 overflow-hidden">
-            {/* Fade gradients top/bottom */}
             <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-card/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card/80 to-transparent z-10 pointer-events-none" />
 
@@ -282,19 +194,22 @@ const Demo = () => {
 
         <p className="text-center text-xs font-mono text-muted-foreground mt-8 uppercase tracking-widest">
           <Zap className="w-3 h-3 inline mr-1 text-accent" />
-          Demo environment · Synthetic data
+          Demo environment · Live embedded windows
         </p>
       </main>
     </div>
   );
 };
 
-const Stat = ({ label, value }: { label: string; value: string }) => (
-  <div>
-    <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-1">
-      {label}
-    </p>
-    <p className="text-sm font-mono text-foreground tabular-nums">{value}</p>
+const IframeFrame = ({ src, title }: { src: string; title: string }) => (
+  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg border border-border/60 bg-background/40">
+    <iframe
+      src={src}
+      title={title}
+      loading="lazy"
+      className="absolute inset-0 w-full h-full border-0"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+    />
   </div>
 );
 
@@ -313,13 +228,19 @@ const DisplayWindow = ({
 }) => {
   const bracketColor = accent === "primary" ? "border-primary/60" : "border-accent/60";
   const iconColor = accent === "primary" ? "text-primary" : "text-accent";
+  const hoverGlow =
+    accent === "primary"
+      ? "hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20"
+      : "hover:border-accent/50 hover:shadow-xl hover:shadow-accent/20";
   return (
-    <div className="group relative rounded-xl border border-border bg-card/40 backdrop-blur-sm overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 animate-fade-in-up">
+    <div
+      className={`group relative rounded-xl border border-border bg-card/40 backdrop-blur-sm overflow-hidden transition-all duration-500 animate-fade-in-up ${hoverGlow}`}
+    >
       {/* Corner brackets */}
-      <span className={`absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 ${bracketColor}`} />
-      <span className={`absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 ${bracketColor}`} />
-      <span className={`absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 ${bracketColor}`} />
-      <span className={`absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 ${bracketColor}`} />
+      <span className={`absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 ${bracketColor} z-10`} />
+      <span className={`absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 ${bracketColor} z-10`} />
+      <span className={`absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 ${bracketColor} z-10`} />
+      <span className={`absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 ${bracketColor} z-10`} />
 
       <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-card/60">
         <div className="flex items-center gap-2">
@@ -330,7 +251,7 @@ const DisplayWindow = ({
           {subtitle}
         </span>
       </div>
-      <div className="p-6">{children}</div>
+      <div className="p-4">{children}</div>
     </div>
   );
 };
