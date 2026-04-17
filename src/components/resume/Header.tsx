@@ -1,23 +1,28 @@
 import { resumeData } from "@/data/resumeData";
-import { Download } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 /**
  * <!-- SECTION: Header -->
- * Contains name, title, intro, headshot, and Download PDF button
+ * Contains name, title, intro, and Demo CTA button
  * EDIT: Update personal info in src/data/resumeData.ts
  */
 const Header = () => {
   const { personal } = resumeData;
 
-  const handleDownloadPDF = () => {
-    window.print();
-  };
-
-
   return (
     <header className="relative pb-section-sm border-b border-border">
+      {/* Demo Button - Top Right with attention-grabbing animation */}
+      <a
+        href="#projects"
+        className="group absolute top-0 right-0 print:hidden inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/50 hover:scale-105 transition-all duration-300 animate-pulse-glow"
+      >
+        <span className="absolute inset-0 rounded-full bg-accent/40 animate-ping-slow opacity-75" aria-hidden="true" />
+        <Sparkles className="w-4 h-4 relative z-10 group-hover:rotate-12 transition-transform" />
+        <span className="relative z-10">View Demo</span>
+      </a>
+
       {/* Main Header Content */}
-      <div className="animate-fade-in-up">
+      <div className="animate-fade-in-up pr-0 md:pr-40">
         {/* Name */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-foreground mb-4">
           {personal.name}
