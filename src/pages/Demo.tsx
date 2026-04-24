@@ -66,7 +66,7 @@ const Demo = () => {
   const triggerBreak = async (target: "astro" | "system") => {
     setPending(target);
     const url = target === "astro" ? BREAK_ENDPOINTS.astro : BREAK_ENDPOINTS.system;
-    const label = target === "astro" ? "Break Astro App" : "Break Entire System";
+    const label = target === "astro" ? "Break Astro Calc" : "Break Entire System";
     pushLog({ source: "OPERATOR", message: `→ ${label} requested`, kind: "warn" });
     try {
       const res = await fetch(url, { method: "POST" });
@@ -156,7 +156,7 @@ const Demo = () => {
         <SectionHeader index="02" title="System Control" caption="Destructive — triggers real failure" />
         <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-20 max-w-3xl mx-auto">
           <BreakButton
-            label="Break Astro App"
+            label="Break Astro Calc"
             onClick={() => triggerBreak("astro")}
             loading={pending === "astro"}
             disabled={pending !== null}
