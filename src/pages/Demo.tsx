@@ -263,9 +263,10 @@ const IframeFrame = ({ src, title }: { src: string; title: string }) => (
     <iframe
       src={src}
       title={title}
-      loading="lazy"
+      loading="eager"
+      referrerPolicy="no-referrer"
+      allow="fullscreen"
       className="absolute inset-0 w-full h-full border-0"
-      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
     />
   </div>
 );
