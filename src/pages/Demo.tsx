@@ -12,8 +12,8 @@ import { ArrowLeft, Radio, Shield, Zap, AlertOctagon, Loader2 } from "lucide-rea
  */
 
 const BREAK_ENDPOINTS = {
-  astro: "https://updatelistener.ngrok.app/breakenviroment",
-  system: "https://updatelistener.ngrok.app/breakcontainer",
+  astro: "https://updatelistener.ngrok.app/breakcontainer",
+  system: "https://updatelistener.ngrok.app/breakenviroment",
 } as const;
 
 const SEED_LOGS: { source: string; message: string }[] = [
