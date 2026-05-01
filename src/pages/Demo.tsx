@@ -49,6 +49,8 @@ const Demo = () => {
     }))
   );
   const [pending, setPending] = useState<null | "astro" | "system">(null);
+  const [astroNonce, setAstroNonce] = useState(0);
+  const [changeNonce, setChangeNonce] = useState(0);
   const logRef = useRef<HTMLDivElement>(null);
 
   const pushLog = (entry: Omit<LogEntry, "id" | "time">) =>
@@ -61,6 +63,15 @@ const Demo = () => {
       pushLog({ ...seed, kind: "info" });
     }, 3500);
     return () => clearInterval(tick);
+  }, []);
+
+  // Periodic iframe reload — every 15s — so live windows reflect real backend state (crashes included)
+  useEffect(() => {
+    const reload = setInterval(() => {
+      setAstroNonce((n) => n + 1);
+      setChangeNonce((n) => n + 1);
+    }, 15000);
+    return () => clearInterval(reload);
   }, []);
 
   const triggerBreak = async (target: "astro" | "system") => {
@@ -85,6 +96,15 @@ const Demo = () => {
       });
     } finally {
       setPending(null);
+      // Force-reload iframes shortly after a break so the crash is visible immediately
+      setTimeout(() => {
+        if (target === "astro") {
+          setAstroNonce((n) => n + 1);
+        } else {
+          setAstroNonce((n) => n + 1);
+          setChangeNonce((n) => n + 1);
+        }
+      }, 800);
     }
   };
 
@@ -147,10 +167,10 @@ const Demo = () => {
         <SectionHeader index="01" title="Live Applications" caption="Embedded production windows" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
           <DisplayWindow title="Astro Calc" subtitle="NODE.MESH-A" icon={Radio} accent="primary">
-            <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" />
+            <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" reloadKey={astroNonce} />
           </DisplayWindow>
           <DisplayWindow title="Change Calc" subtitle="CORE.PRIMARY" icon={Shield} accent="accent">
-            <IframeFrame src="https://change-calc.ngrok.app" title="Change Calc" />
+            <IframeFrame src="https://change-calc.ngrok.app" title="Change Calc" reloadKey={changeNonce} />
           </DisplayWindow>
         </div>
 
@@ -260,9 +280,10 @@ const BreakButton = ({
   </button>
 );
 
-const IframeFrame = ({ src, title }: { src: string; title: string }) => (
+const IframeFrame = ({ src, title, reloadKey = 0 }: { src: string; title: string; reloadKey?: number }) => (
   <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg border border-border/60 bg-background/40">
     <iframe
+      key={reloadKey}
       src={src}
       title={title}
       loading="eager"
