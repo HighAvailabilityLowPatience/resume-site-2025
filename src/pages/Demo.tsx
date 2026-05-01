@@ -280,9 +280,10 @@ const BreakButton = ({
   </button>
 );
 
-const IframeFrame = ({ src, title }: { src: string; title: string }) => (
+const IframeFrame = ({ src, title, reloadKey = 0 }: { src: string; title: string; reloadKey?: number }) => (
   <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg border border-border/60 bg-background/40">
     <iframe
+      key={reloadKey}
       src={src}
       title={title}
       loading="eager"
