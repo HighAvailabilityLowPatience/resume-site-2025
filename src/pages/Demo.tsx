@@ -96,6 +96,15 @@ const Demo = () => {
       });
     } finally {
       setPending(null);
+      // Force-reload iframes shortly after a break so the crash is visible immediately
+      setTimeout(() => {
+        if (target === "astro") {
+          setAstroNonce((n) => n + 1);
+        } else {
+          setAstroNonce((n) => n + 1);
+          setChangeNonce((n) => n + 1);
+        }
+      }, 800);
     }
   };
 
