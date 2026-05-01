@@ -65,6 +65,15 @@ const Demo = () => {
     return () => clearInterval(tick);
   }, []);
 
+  // Periodic iframe reload — every 15s — so live windows reflect real backend state (crashes included)
+  useEffect(() => {
+    const reload = setInterval(() => {
+      setAstroNonce((n) => n + 1);
+      setChangeNonce((n) => n + 1);
+    }, 15000);
+    return () => clearInterval(reload);
+  }, []);
+
   const triggerBreak = async (target: "astro" | "system") => {
     setPending(target);
     const url = target === "astro" ? BREAK_ENDPOINTS.astro : BREAK_ENDPOINTS.system;
