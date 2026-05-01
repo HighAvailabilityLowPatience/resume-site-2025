@@ -167,10 +167,10 @@ const Demo = () => {
         <SectionHeader index="01" title="Live Applications" caption="Embedded production windows" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
           <DisplayWindow title="Astro Calc" subtitle="NODE.MESH-A" icon={Radio} accent="primary">
-            <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" />
+            <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" reloadKey={astroNonce} />
           </DisplayWindow>
           <DisplayWindow title="Change Calc" subtitle="CORE.PRIMARY" icon={Shield} accent="accent">
-            <IframeFrame src="https://change-calc.ngrok.app" title="Change Calc" />
+            <IframeFrame src="https://change-calc.ngrok.app" title="Change Calc" reloadKey={changeNonce} />
           </DisplayWindow>
         </div>
 
