@@ -67,30 +67,35 @@ export const resumeData = {
   // Add new projects by copying the object structure below
   // =====================================================
   projects: [
-    {
-      name: "Distributed Telemetry + Inference Platform",
-      description: "Built a distributed telemetry-collection system with ML inference: node-agents push resource-usage & textual payloads to a FastAPI backend, which runs a transformer-based sentiment + severity model locally, logs results, and surfaces aggregated network/mood health via a React UI.",
-      tools: ["Python", "FastAPI", "Docker", "Docker Compose", "Hugging Face Transformers", "PyTorch", "SQLite (or local DB)", "React", "TypeScript", "Docker Agent"],
-      outcome: "Enabled real-time telemetry ingestion + sentiment inference across multiple nodes; delivered a demo prototype with working /predict and /health endpoints, full containerization, and a UI for system health — demonstrating capability across infrastructure, ML, monitoring, and frontend stacks.",
-      // EDIT: Add your project repo URL
-      repoUrl: "https://github.com/HighAvailabilityLowPatience/inference-engine.git",
-    },
-    {
-      name: "HALP – Hybrid Home Lab Platform",
-      description: "Engineered a full enterprise-style home lab with virtualized infrastructure, Windows AD domain services, segmented VLAN networking, hybrid-cloud backups, and automated monitoring. Designed to mirror real-world DevOps, IT operations, and cloud integration workflows.",
-      tools: ["Proxmox VE", "Windows Server + Active Directory", "TP-Link VLANs", "Docker & Docker Compose", "FastAPI", "Python", "Cron (Linux)", "Windows Task Scheduler", "AWS S3, EC2, CloudWatch, EventBridge", "Prometheus", "Grafana", "WireGuard VPN"],
-      outcome: "Built a production-style environment including AD-backed authentication, VLAN-based isolation, automated backup pipelines, and observability across hypervisors, servers, and containers. The environment behaves like a trimmed-down corporate network, showcasing practical engineering depth and real operational skill.",
-      repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
-    },
-    {
-     name: "Nautilus Cloud Endpoint Modernization",
-description:
-  "Led the command-wide transition from legacy NMCI/ONE-Net systems to the Navy’s Nautilus cloud-managed endpoint model, coordinating planning, execution, and user onboarding for a 940-person enterprise environment.",
-tools: ["Windows Endpoint Management", "Zero-Trust Security Controls", "DoD Cloud Compliance Framework", "Project Scheduling & Stakeholder Coordination", "Troubleshooting & User Support Operations"],
-outcome: "Executed modernization of 264 workstations and improved login times by 60%+. Strengthened endpoint security posture, aligned infrastructure with DoD zero-trust standards, reduced support overhead, and increased system uptime and user satisfaction across departments. Served as a key coordinator ensuring smooth migration, application compatibility, and uninterrupted mission readiness.",
-repoUrl: null, // Classified / internal project, so no repo
-    },
-  ],
+  {
+    name: "Self-Healing Infrastructure System",
+    description: "Designed and implemented a self-healing infrastructure platform with automated monitoring, failure detection, and recovery mechanisms.",
+    tools: ["Jenkins", "Bash", "Docker", "Linux", "ntfy", "HTTP health checks"],
+    outcome: "Built an automated recovery system capable of detecting service failures via health endpoints and restoring infrastructure using scripted remediation. Demonstrated full failure lifecycle including failure injection, detection, alerting, and recovery with real-time notifications.",
+    repoUrl: "https://github.com/HighAvailabilityLowPatience/devops-self-healing-infra.git",
+  },
+  {
+    name: "CI/CD Pipeline Automation",
+    description: "Built an end-to-end CI/CD pipeline using GitHub Actions to automate application build, containerization, and deployment workflows.",
+    tools: ["GitHub Actions", "Docker", "DockerHub", "SSH", "Linux"],
+    outcome: "Implemented automated workflow from code commit to deployment, including linting, container builds, image versioning, and remote server deployment. Enabled continuous deployment and eliminated manual deployment steps.",
+    repoUrl: " https://github.com/HighAvailabilityLowPatience/devops-cicd-github-actions-docker.git",
+  },
+  {
+    name: "Infrastructure as Code Cloud Deployment",
+    description: "Provisioned and configured AWS infrastructure using Terraform and Ansible to support containerized application deployment.",
+    tools: ["AWS EC2", "Terraform", "Ansible", "Docker"],
+    outcome: "Deployed 3 containerized applications using automated infrastructure provisioning and configuration. Achieved full environment deployment through a single Terraform command with publicly accessible services.",
+    repoUrl: "https://github.com/HighAvailabilityLowPatience/devops-cloud-infra-terraform-ansible.git",
+  },
+  {
+    name: "HALP – Hybrid Home Lab Platform",
+    description: "Engineered a full enterprise-style home lab with virtualized infrastructure, Windows AD domain services, segmented VLAN networking, hybrid-cloud backups, and automated monitoring.",
+    tools: ["Proxmox VE", "Windows Server + Active Directory", "VLAN Networking", "Docker & Docker Compose", "Python", "AWS S3, EC2", "Prometheus", "Grafana", "WireGuard VPN"],
+    outcome: "Built a production-style environment featuring AD authentication, VLAN isolation, automated backups, and full observability across systems. Demonstrates foundational infrastructure engineering and real-world operational capability.",
+    repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
+  }
+]
 
   // =====================================================
   // EDIT: Work Experience
