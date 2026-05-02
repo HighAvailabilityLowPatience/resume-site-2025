@@ -95,7 +95,7 @@ export const resumeData = {
     outcome: "Built a production-style environment featuring AD authentication, VLAN isolation, automated backups, and full observability across systems. Demonstrates foundational infrastructure engineering and real-world operational capability.",
     repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
   }
-]
+],
 
   // =====================================================
   // EDIT: Work Experience
