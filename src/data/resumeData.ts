@@ -97,13 +97,31 @@ repoUrl: null, // Classified / internal project, so no repo
   // Add new positions by copying the object structure below
   // =====================================================
   experience: [
+
+     {
+      title: "Software Engineering Intern",
+      company: "Creating Coding Careers",
+      location: "Reston, VA",
+      startDate: "Feb 2026",
+      endDate: "Present",
+      current: true,
+      bullets: [
+        "Developed backend services using JavaScript (Node.js, Express) to build RESTful APIs, including proxy server implementations handling HTTP request routing and data flow",
+        "Built and tested full-stack applications using React, HTML, and Node.js, integrating frontend components with backend APIs",
+        "Designed and queried SQL databases, implementing CRUD operations and optimizing basic query performance",
+        "Created multiple hands-on projects demonstrating API development, server architecture, and frontend integration (available on GitHub)",
+        "Worked independently to design, develop, and debug applications, strengthening problem-solving and self-sufficiency in a simulated engineering environment",
+        "Applied software development fundamentals including asynchronous programming, API design, and modular code structure",
+        
+      ],
+    },
     {
       title: "Lead Systems Administrator (N6 COMMS DLPO)",
       company: "US Navy.",
       location: "Charleston, SC",
       startDate: "Nov 2022",
-      endDate: "Present",
-      current: true,
+      endDate: "Feb 2026",
+      current: false,
       bullets: [
         "Managed user accounts and permissions for 1,200+ personnel, enforcing proper access control and streamlining onboarding/offboarding to reduce setup time by 20%",
         "Implemented and maintained GPOs and system updates across all workstations and servers, ensuring compliance and network stability",
