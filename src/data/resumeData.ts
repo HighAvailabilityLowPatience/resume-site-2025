@@ -51,7 +51,7 @@ export const resumeData = {
       "YAML / JSON",
       "HTML",
       "CSS",
-      "Javascript",
+      "Javascript (Node.js, Express, React)",
     ],
     systems: [
       "Windows Server & Active Directory (Domains, Group Policy)",
