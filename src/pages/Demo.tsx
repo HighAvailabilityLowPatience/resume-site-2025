@@ -66,6 +66,23 @@ const Demo = () => {
     return () => clearInterval(tick);
   }, []);
 
+  // Polls backend every 2s and updates systemHealthy
+useEffect(() => {
+  const interval = setInterval(async () => {
+    try {
+      const res = await fetch("https://updatelistener.ngrok.app/health");
+
+      // 200 = healthy, anything else = unhealthy
+      setSystemHealthy(res.ok);
+    } catch {
+      // network failure = unhealthy
+      setSystemHealthy(false);
+    }
+  }, 2000);
+
+  return () => clearInterval(interval);
+}, []);
+
   // Periodic iframe reload — every 15s — so live windows reflect real backend state (crashes included)
   useEffect(() => {
     const reload = setInterval(() => {
