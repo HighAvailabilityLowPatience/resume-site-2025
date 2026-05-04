@@ -80,9 +80,7 @@ const Demo = () => {
     const label = target === "astro" ? "Break Astro Calc" : "Break Entire System";
     pushLog({ source: "OPERATOR", message: `→ ${label} requested`, kind: "warn" });
     try {
-      const res = await fetch(url, { method: "POST",
-  headers: {
-    "x-api-key": import.meta.env.VITE_API_ACCESS_TOOL } });
+      const res = await fetch(url, { method: "POST" });
       pushLog({
         source: "OPERATOR",
         message: `${label} responded ${res.status} ${res.statusText || ""}`.trim(),
