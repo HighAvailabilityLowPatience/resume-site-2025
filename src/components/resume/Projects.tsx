@@ -21,19 +21,19 @@ const Projects = () => {
   return (
     <section className="py-section border-b border-border">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-10 animate-fade-in-up">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
         Projects
       </h2>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((project, index) => (
           <a
             key={project.name}
             href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block p-6 bg-card border border-border rounded-xl animate-fade-in-up print-break-avoid
+            className="group block p-5 sm:p-6 bg-card border border-border rounded-xl animate-fade-in-up print-break-avoid
               transition-all duration-300 ease-out
               hover:border-primary/40 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2
               focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"

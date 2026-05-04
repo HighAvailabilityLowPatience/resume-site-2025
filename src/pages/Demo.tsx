@@ -155,9 +155,9 @@ useEffect(() => {
         style={{ background: "radial-gradient(circle, hsl(var(--primary)), transparent 70%)" }}
       />
 
-      <main className="relative max-w-content mx-auto px-6 md:px-8 py-10 md:py-14">
+      <main className="relative max-w-content mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-14">
         {/* Header bar */}
-        <div className="flex items-center justify-between mb-10 animate-fade-in-up">
+        <div className="flex items-center justify-between mb-8 sm:mb-10 animate-fade-in-up gap-3">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
@@ -175,21 +175,21 @@ useEffect(() => {
         </div>
 
         {/* Title */}
-        <div className="mb-14 animate-fade-in-up">
+        <div className="mb-10 sm:mb-14 animate-fade-in-up">
           <p className="text-xs font-mono uppercase tracking-[0.3em] text-accent mb-3">
             // Mission Control
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-foreground mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-foreground mb-3 break-words">
             Operations Dashboard
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl">
             Trigger failures and watch the system recover automatically.
           </p>
         </div>
 
         {/* SECTION 1 — Live Applications */}
         <SectionHeader index="01" title="Live Applications" caption="Embedded production windows" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-20">
           <DisplayWindow title="Astro Calc" subtitle="NODE.MESH-A" icon={Radio} accent="primary">
             <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" reloadKey={astroNonce} />
           </DisplayWindow>
@@ -200,7 +200,7 @@ useEffect(() => {
 
         {/* SECTION 2 — System Control */}
         <SectionHeader index="02" title="System Control" caption="Destructive — triggers real failure" />
-        <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-20 max-w-3xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-stretch justify-center gap-3 sm:gap-4 mb-12 sm:mb-20 max-w-3xl mx-auto">
           <BreakButton
             label="Break Astro Calc"
             onClick={() => triggerBreak("astro")}
@@ -230,12 +230,12 @@ useEffect(() => {
           <div ref={logRef} className="relative h-80 overflow-y-auto bg-background/40">
             <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-card/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-card/80 to-transparent z-10 pointer-events-none" />
-            <ul className="font-mono text-xs leading-relaxed py-3 px-5">
+            <ul className="font-mono text-[11px] sm:text-xs leading-relaxed py-3 px-3 sm:px-5">
               {logs.map((log) => (
-                <li key={log.id} className="flex gap-3 py-0.5 animate-slide-in-left">
+                <li key={log.id} className="flex gap-2 sm:gap-3 py-0.5 animate-slide-in-left">
                   <span className="text-muted-foreground tabular-nums shrink-0">{log.time}</span>
-                  <span className="text-muted-foreground/70 shrink-0 w-24 truncate">[{log.source}]</span>
-                  <span className={kindClass(log.kind)}>{log.message}</span>
+                  <span className="text-muted-foreground/70 shrink-0 w-16 sm:w-24 truncate">[{log.source}]</span>
+                  <span className={`${kindClass(log.kind)} break-words min-w-0`}>{log.message}</span>
                 </li>
               ))}
             </ul>
@@ -265,10 +265,10 @@ const kindClass = (kind: LogEntry["kind"]) => {
 };
 
 const SectionHeader = ({ index, title, caption }: { index: string; title: string; caption: string }) => (
-  <div className="flex items-end justify-between mb-5 animate-fade-in-up">
-    <div className="flex items-baseline gap-3">
-      <span className="text-xs font-mono uppercase tracking-[0.3em] text-accent">{index}</span>
-      <h2 className="text-2xl md:text-3xl font-serif font-medium tracking-tight text-foreground">
+  <div className="flex items-end justify-between mb-4 sm:mb-5 animate-fade-in-up gap-3">
+    <div className="flex items-baseline gap-2 sm:gap-3 min-w-0">
+      <span className="text-xs font-mono uppercase tracking-[0.3em] text-accent shrink-0">{index}</span>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-medium tracking-tight text-foreground truncate">
         {title}
       </h2>
     </div>
@@ -292,7 +292,7 @@ const BreakButton = ({
   <button
     onClick={onClick}
     disabled={disabled}
-    className="group relative flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl border border-destructive/40 bg-destructive/10 text-destructive font-mono uppercase tracking-widest text-sm transition-all duration-300 hover:bg-destructive/20 hover:border-destructive hover:shadow-xl hover:shadow-destructive/30 disabled:opacity-50 disabled:cursor-not-allowed"
+    className="group relative flex-1 inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-4 sm:py-5 min-h-[56px] rounded-xl border border-destructive/40 bg-destructive/10 text-destructive font-mono uppercase tracking-widest text-xs sm:text-sm transition-all duration-300 hover:bg-destructive/20 hover:border-destructive hover:shadow-xl hover:shadow-destructive/30 disabled:opacity-50 disabled:cursor-not-allowed"
   >
     <span className="absolute inset-0 rounded-xl bg-destructive/0 group-hover:bg-destructive/5 transition-colors" />
     {loading ? (
@@ -305,7 +305,7 @@ const BreakButton = ({
 );
 
 const IframeFrame = ({ src, title, reloadKey = 0 }: { src: string; title: string; reloadKey?: number }) => (
-  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg border border-border/60 bg-background/40">
+  <div className="relative w-full aspect-[4/3] sm:aspect-[4/3] overflow-hidden rounded-lg border border-border/60 bg-background/40">
     <iframe
       key={reloadKey}
       src={`${src}?t=${reloadKey}`}
@@ -346,16 +346,16 @@ const DisplayWindow = ({
       <span className={`absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 ${bracketColor} z-10`} />
       <span className={`absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 ${bracketColor} z-10`} />
 
-      <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-card/60">
-        <div className="flex items-center gap-2">
-          <Icon className={`w-4 h-4 ${iconColor}`} />
-          <h3 className="text-sm font-mono uppercase tracking-widest text-foreground">{title}</h3>
+      <div className="flex items-center justify-between px-3 sm:px-5 py-3 border-b border-border bg-card/60 gap-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <Icon className={`w-4 h-4 ${iconColor} shrink-0`} />
+          <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-foreground truncate">{title}</h3>
         </div>
-        <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground shrink-0">
           {subtitle}
         </span>
       </div>
-      <div className="p-4">{children}</div>
+      <div className="p-2 sm:p-4">{children}</div>
     </div>
   );
 };

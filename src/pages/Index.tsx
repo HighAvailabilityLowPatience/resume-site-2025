@@ -24,7 +24,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Main Container */}
-      <main className="max-w-content mx-auto px-6 md:px-8 py-12 md:py-16 lg:py-20">
+      <main className="max-w-content mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
         {/* <!-- SECTION: Header --> */}
         <Header />
 

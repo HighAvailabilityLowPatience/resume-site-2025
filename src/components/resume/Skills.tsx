@@ -18,7 +18,7 @@ const Skills = () => {
   return (
     <section className="py-section border-b border-border">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-10 animate-fade-in-up">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
         Proficiencies
       </h2>
 
