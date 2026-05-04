@@ -76,8 +76,8 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		spacing: {
-  			'section': '5rem',
-  			'section-sm': '3rem'
+  			'section': 'clamp(2.5rem, 6vw, 5rem)',
+  			'section-sm': 'clamp(1.5rem, 4vw, 3rem)'
   		},
   		maxWidth: {
   			'content': '900px'

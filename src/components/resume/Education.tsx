@@ -11,11 +11,11 @@ const Education = () => {
   return (
     <section className="py-section border-b border-border">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-10 animate-fade-in-up">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
         Education & Certifications
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {/* Education */}
         <div className="animate-fade-in-up delay-100">
           <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">

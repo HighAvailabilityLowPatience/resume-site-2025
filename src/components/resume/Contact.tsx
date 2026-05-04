@@ -39,12 +39,12 @@ const Contact = () => {
   return (
     <section className="py-section">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-10 animate-fade-in-up">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
         Get in Touch
       </h2>
 
       {/* Contact Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {contactLinks.map((link, index) => (
           <a
             key={link.label}
