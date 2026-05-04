@@ -49,6 +49,7 @@ const Demo = () => {
     }))
   );
   const [pending, setPending] = useState<null | "astro" | "system">(null);
+  const [systemHealthy, setSystemHealthy] = useState(true);
   const [astroNonce, setAstroNonce] = useState(0);
   const [changeNonce, setChangeNonce] = useState(0);
   const logRef = useRef<HTMLDivElement>(null);
