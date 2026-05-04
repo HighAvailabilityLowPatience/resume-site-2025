@@ -127,6 +127,14 @@ useEffect(() => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Subtle grid backdrop */}
+      {/* ==============================
+    GLOBAL HEALTH BANNER (NEW)
+   ============================== */}
+{!systemHealthy && (
+  <div className="fixed top-0 left-0 right-0 z-50 bg-red-600 text-white text-center py-2 font-mono text-sm tracking-widest">
+    ⚠ FAILURE DETECTED — RECOVERY IN PROGRESS
+  </div>
+)}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
