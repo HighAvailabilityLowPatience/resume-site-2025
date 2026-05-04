@@ -308,7 +308,7 @@ const IframeFrame = ({ src, title, reloadKey = 0 }: { src: string; title: string
   <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg border border-border/60 bg-background/40">
     <iframe
       key={reloadKey}
-      src={src}
+      src={`${src}?t=${reloadKey}`}
       title={title}
       loading="eager"
       referrerPolicy="no-referrer"
