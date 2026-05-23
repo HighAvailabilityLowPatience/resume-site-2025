@@ -6,7 +6,7 @@ const HelixChatbot = () => {
 
   return (
     <>
-      {/* Floating Toggle Button */}
+      {/* Floating Button */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
@@ -38,47 +38,42 @@ const HelixChatbot = () => {
             right: "20px",
             width: "400px",
             height: "650px",
-            background: "white",
+            zIndex: 9999,
             borderRadius: "16px",
             overflow: "hidden",
-            zIndex: 9999,
             boxShadow: "0 12px 32px rgba(0,0,0,0.3)",
+            background: "white",
           }}
         >
-          {/* Header */}
-          <div
+          {/* Close Button */}
+          <button
+            onClick={() => setOpen(false)}
             style={{
-              height: "56px",
-              background: "#111827",
+              position: "absolute",
+              top: "12px",
+              right: "12px",
+              zIndex: 10000,
+              background: "rgba(0,0,0,0.6)",
+              border: "none",
               color: "white",
+              borderRadius: "9999px",
+              width: "32px",
+              height: "32px",
+              cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between",
-              padding: "0 16px",
-              fontWeight: 600,
+              justifyContent: "center",
             }}
           >
-            <span>Helix</span>
-
-            <button
-              onClick={() => setOpen(false)}
-              style={{
-                background: "transparent",
-                border: "none",
-                color: "white",
-                cursor: "pointer",
-              }}
-            >
-              <X size={22} />
-            </button>
-          </div>
+            <X size={18} />
+          </button>
 
           {/* DocsBot iframe */}
           <iframe
             src="https://docsbot.ai/iframe/3eTjhBlgnc442jTX4xoo/tcJwCQtJEsV6qoKR8Y4r"
-            width="100%"
-            height="calc(100% - 56px)"
             style={{
+              width: "100%",
+              height: "100%",
               border: "none",
             }}
             allow="microphone; camera"
