@@ -43,6 +43,8 @@ const Index = () => {
         {/* <!-- SECTION: Contact --> */}
         <Contact />
       </main>
+      {/* Helix AI Assistant */}
+      <HelixChatbot />
     </div>
   );
 };
