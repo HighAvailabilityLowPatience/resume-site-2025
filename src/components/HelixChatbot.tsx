@@ -18,7 +18,7 @@ const HelixChatbot = () => {
             height: "64px",
             borderRadius: "9999px",
             border: "none",
-            background: "#"linear-gradient(135deg, #0f172a, #1e293b)",
+            background: "linear-gradient(135deg, #0f172a, #1e293b)",
             color: "white",
             cursor: "pointer",
             zIndex: 9999,
