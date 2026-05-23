@@ -4,7 +4,7 @@ import Projects from "@/components/resume/Projects";
 import Experience from "@/components/resume/Experience";
 import Education from "@/components/resume/Education";
 import Contact from "@/components/resume/Contact";
-
+import HelixChatbot from "@/components/HelixChatbot";
 /**
  * RESUME PAGE
  * ===========
