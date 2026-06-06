@@ -18,11 +18,11 @@ const HelixChatbot = () => {
             height: "64px",
             borderRadius: "9999px",
             border: "none",
-            background: "linear-gradient(135deg, #0f172a, #1e293b)",
+            background: "linear-gradient(135deg, #fb923c, #ea580c)",
             color: "white",
             cursor: "pointer",
             zIndex: 9999,
-            boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 24px rgba(234,88,12,0.35)",
           }}
         >
           <MessageSquare size={28} />
@@ -51,7 +51,7 @@ const HelixChatbot = () => {
             style={{
               position: "absolute",
               top: "12px",
-              right: "12px",
+              left: "12px",
               zIndex: 10000,
               background: "rgba(0,0,0,0.6)",
               border: "none",
