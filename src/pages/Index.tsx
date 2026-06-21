@@ -5,6 +5,7 @@ import Experience from "@/components/resume/Experience";
 import Education from "@/components/resume/Education";
 import Contact from "@/components/resume/Contact";
 import HelixChatbot from "@/components/HelixChatbot";
+import ResumePDF from "@/components/ResumePDF";
 /**
  * RESUME PAGE
  * ===========
