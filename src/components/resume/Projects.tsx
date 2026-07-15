@@ -1,5 +1,6 @@
 import { resumeData } from "@/data/resumeData";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Network, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /**
  * <!-- SECTION: Projects -->
@@ -17,68 +18,57 @@ import { ExternalLink } from "lucide-react";
  */
 const Projects = () => {
   const { projects } = resumeData;
+  const accents = ["blue", "violet", "cyan", "amber"];
 
   return (
-    <section className="py-section border-b border-border">
-      {/* Section Title */}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
-        Projects
-      </h2>
-
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+    <section id="projects" className="portfolio-section projects-section">
+      <div className="portfolio-container">
+        <div className="section-head">
+          <p className="eyebrow">Selected Work</p>
+          <h2>Infrastructure projects with working outcomes.</h2>
+          <p className="section-lede">Same project content, reframed as portfolio case studies with clearer impact.</p>
+        </div>
         {projects.map((project, index) => (
-          <a
+          <article
             key={project.name}
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block p-5 sm:p-6 bg-card border border-border rounded-xl animate-fade-in-up print-break-avoid
-              transition-all duration-300 ease-out
-              hover:border-primary/40 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2
-              focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+            className={`project-showcase ${index % 2 ? "project-reverse" : ""} accent-${accents[index % accents.length]}`}
           >
-            {/* Project Header */}
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <h3 className="text-xl font-serif font-medium text-foreground group-hover:text-primary transition-colors duration-300">
-                {project.name}
-              </h3>
-              <ExternalLink 
-                size={18} 
-                className="text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 flex-shrink-0 mt-1" 
-              />
+            <div className="project-visual" aria-hidden="true">
+              <div className="terminal-preview">
+                <div className="terminal-preview-bar"><span /><span /><span /></div>
+                <div className="terminal-preview-body">
+                  <p>$ deploy {project.name.toLowerCase().replace(/\s+/g, "-")}</p>
+                  <p className="muted">checking health endpoints...</p>
+                  <p className="success">status: operational</p>
+                  <p className="muted">tooling: {project.tools.slice(0, 3).join(" · ")}</p>
+                </div>
+              </div>
             </div>
-
-            {/* Description */}
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4 group-hover:text-foreground/70 transition-colors duration-300">
-              {project.description}
-            </p>
-
-            {/* Tools Used */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground"
-                >
-                  {tool}
-                </span>
-              ))}
+            <div className="project-copy">
+              <p className="eyebrow">DevOps · Case Study</p>
+              <h3>{project.name}</h3>
+              <p className="project-lede">{project.description}</p>
+              <div className="project-impact"><strong>Impact</strong><p>{project.outcome}</p></div>
+              <div className="tag-row">{project.tools.map((tool) => <span key={tool} className="tag">{tool}</span>)}</div>
+              <div className="project-actions">
+                <a className="text-link" href={project.repoUrl} target="_blank" rel="noopener noreferrer">View repository <ExternalLink size={15} /></a>
+                {"demoUrl" in project && project.demoUrl && (
+                  <a className="demo-chip" href={project.demoUrl}>
+                    <Play size={13} />
+                    Demo
+                  </a>
+                )}
+                {"architectureUrl" in project && project.architectureUrl && (
+                  <Link className="demo-chip architecture-chip" to={project.architectureUrl}>
+                    <Network size={13} />
+                    Architecture
+                  </Link>
+                )}
+              </div>
             </div>
-
-            {/* Outcome */}
-            <div className="pt-4 border-t border-border group-hover:border-primary/30 transition-colors duration-300">
-              <p className="text-sm text-foreground/80">
-                <span className="font-medium text-accent">Impact: </span>
-                {project.outcome}
-              </p>
-            </div>
-          </a>
+          </article>
         ))}
       </div>
-
-      {/* EDIT: Add new project cards above this comment */}
     </section>
   );
 };

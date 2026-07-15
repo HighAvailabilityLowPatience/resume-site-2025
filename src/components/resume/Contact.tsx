@@ -37,41 +37,31 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-section">
-      {/* Section Title */}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
-        Get in Touch
-      </h2>
-
-      {/* Contact Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+    <section id="contact" className="portfolio-section contact-section">
+      <div className="portfolio-container">
+      <div className="contact-card">
+        <p className="eyebrow">Contact</p>
+        <h2>Let's build something reliable.</h2>
+        <p className="section-lede">
+          {personal.availability}. Reach out for DevOps, cloud infrastructure, automation, or technical leadership conversations.
+        </p>
+      <div className="contact-grid">
         {contactLinks.map((link, index) => (
           <a
             key={link.label}
             href={link.href}
             target={link.label !== "Email" ? "_blank" : undefined}
             rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-            className="group flex flex-col gap-2 p-4 border border-border rounded-lg transition-all duration-300 hover:border-foreground hover:bg-secondary/30 animate-fade-in-up"
-            style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+            className="contact-link"
           >
-            <link.icon
-              size={20}
-              className="text-muted-foreground group-hover:text-foreground transition-colors duration-200"
-            />
-            <span className="text-xs font-sans uppercase tracking-wider text-muted-foreground">
-              {link.label}
-            </span>
-            <span className="text-sm text-foreground group-hover:text-foreground/80 transition-colors duration-200 break-all">
-              {link.value}
-            </span>
+            <link.icon size={20} />
+            <span>{link.label}</span>
+            <strong>{link.value}</strong>
           </a>
         ))}
       </div>
-
-      {/* Footer Note */}
-      <p className="mt-12 text-center text-sm text-muted-foreground animate-fade-in delay-500">
-        Looking forward to connecting with you.
-      </p>
+      </div>
+      </div>
     </section>
   );
 };

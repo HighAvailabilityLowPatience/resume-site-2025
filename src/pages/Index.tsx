@@ -5,7 +5,8 @@ import Experience from "@/components/resume/Experience";
 import Education from "@/components/resume/Education";
 import Contact from "@/components/resume/Contact";
 import HelixChatbot from "@/components/HelixChatbot";
-import ResumePDF from "@/components/ResumePDF";
+import { resumeData } from "@/data/resumeData";
+import type { MouseEvent } from "react";
 /**
  * RESUME PAGE
  * ===========
@@ -22,10 +23,33 @@ import ResumePDF from "@/components/ResumePDF";
  * TO UPDATE CONTENT: Edit src/data/resumeData.ts
  */
 const Index = () => {
+  const { personal, contact } = resumeData;
+  const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+    const x = `${event.clientX}px`;
+    const y = `${event.clientY}px`;
+    event.currentTarget.style.setProperty("--mouse-x", x);
+    event.currentTarget.style.setProperty("--mouse-y", y);
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Main Container */}
-      <main className="max-w-content mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+    <div className="min-h-screen bg-background text-foreground interactive-stage" onMouseMove={handleMouseMove}>
+      <div className="portfolio-backdrop" aria-hidden="true" />
+      <div className="mouse-orbit" aria-hidden="true">
+        <span />
+        <span />
+      </div>
+      <header className="site-nav print:hidden">
+        <div className="portfolio-container nav-inner">
+          <a href="#top" className="wordmark">{personal.name}</a>
+          <nav className="nav-links" aria-label="Primary navigation">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact" className="nav-cta">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <main id="top">
         {/* <!-- SECTION: Header --> */}
         <Header />
 
@@ -44,6 +68,12 @@ const Index = () => {
         {/* <!-- SECTION: Contact --> */}
         <Contact />
       </main>
+      <footer className="portfolio-footer">
+        <div className="portfolio-container footer-inner">
+          <p>© {new Date().getFullYear()} {personal.name}</p>
+          <a href={`mailto:${contact.email}`}>Let's connect</a>
+        </div>
+      </footer>
       {/* Helix AI Assistant */}
       <HelixChatbot />
     </div>

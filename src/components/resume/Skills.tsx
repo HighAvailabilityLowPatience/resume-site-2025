@@ -16,39 +16,24 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-section border-b border-border">
-      {/* Section Title */}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-foreground mb-6 sm:mb-10 animate-fade-in-up">
-        Proficiencies
-      </h2>
-
-      {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+    <section id="skills" className="portfolio-section skills-section">
+      <div className="portfolio-container">
+        <div className="section-head">
+          <p className="eyebrow">The Stack</p>
+          <h2>Tools I use to build and operate systems.</h2>
+        </div>
+      <div className="skills-grid">
         {skillCategories.map((category, categoryIndex) => (
-          <div
-            key={category.title}
-            className={`animate-fade-in-up delay-${(categoryIndex + 1) * 100}`}
-            style={{ animationDelay: `${(categoryIndex + 1) * 0.1}s` }}
-          >
-            {/* Category Title */}
-            <h3 className="text-sm font-sans font-semibold uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full"></span>
-              {category.title}
-            </h3>
-
-            {/* Skills List */}
-            <ul className="space-y-2">
+          <div key={category.title} className="skill-card">
+            <h3><span></span>{category.title}</h3>
+            <div className="tag-row">
               {category.items.map((skill, skillIndex) => (
-                <li
-                  key={skillIndex}
-                  className="text-foreground/90 text-base transition-all duration-200 hover:text-primary hover:translate-x-1"
-                >
-                  {skill}
-                </li>
+                <span key={skillIndex} className="tag">{skill}</span>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

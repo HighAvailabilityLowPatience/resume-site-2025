@@ -73,6 +73,8 @@ export const resumeData = {
     tools: ["Jenkins", "Bash", "Docker", "Linux", "ntfy", "HTTP health checks"],
     outcome: "Built an automated recovery system capable of detecting service failures via health endpoints and restoring infrastructure using scripted remediation. Demonstrated full failure lifecycle including failure injection, detection, alerting, and recovery with real-time notifications.",
     repoUrl: "https://github.com/HighAvailabilityLowPatience/devops-self-healing-infra.git",
+    demoUrl: "/demo",
+    architectureUrl: "/projects/self-healing-infrastructure",
   },
   {
     name: "CI/CD Pipeline Automation",
@@ -80,6 +82,7 @@ export const resumeData = {
     tools: ["GitHub Actions", "Docker", "DockerHub", "SSH", "Linux"],
     outcome: "Implemented automated workflow from code commit to deployment, including linting, container builds, image versioning, and remote server deployment. Enabled continuous deployment and eliminated manual deployment steps.",
     repoUrl: " https://github.com/HighAvailabilityLowPatience/devops-cicd-github-actions-docker.git",
+    architectureUrl: "/projects/cicd-pipeline",
   },
   {
     name: "Infrastructure as Code Cloud Deployment",
@@ -87,6 +90,7 @@ export const resumeData = {
     tools: ["AWS EC2", "Terraform", "Ansible", "Docker"],
     outcome: "Deployed 3 containerized applications using automated infrastructure provisioning and configuration. Achieved full environment deployment through a single Terraform command with publicly accessible services.",
     repoUrl: "https://github.com/HighAvailabilityLowPatience/devops-cloud-infra-terraform-ansible.git",
+    architectureUrl: "/projects/cloud-infra",
   },
   {
     name: "HALP – Hybrid Home Lab Platform",
@@ -94,6 +98,7 @@ export const resumeData = {
     tools: ["Proxmox VE", "Windows Server + Active Directory", "VLAN Networking", "Docker & Docker Compose", "Python", "AWS S3, EC2", "Prometheus", "Grafana", "WireGuard VPN"],
     outcome: "Built a production-style environment featuring AD authentication, VLAN isolation, automated backups, and full observability across systems. Demonstrates foundational infrastructure engineering and real-world operational capability.",
     repoUrl: "https://github.com/HighAvailabilityLowPatience/HALP.git",
+    architectureUrl: "/projects/halp",
   }
 ],
 
