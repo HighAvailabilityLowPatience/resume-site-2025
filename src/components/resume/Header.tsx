@@ -14,9 +14,9 @@ const Header = () => {
       <div className="hero-grid" aria-hidden="true" />
       <div className="portfolio-container hero-inner">
         <p className="hero-kicker">{personal.location} · {personal.clearance}</p>
-        <h1>I automate failure <span className="gradient-text">before it becomes downtime</span>.</h1>
+        <h1>I design systems that help teams move faster and <span className="gradient-text">operate smarter</span>.</h1>
         <p className="hero-title">{personal.title}</p>
-        <p className="hero-subtitle">{personal.intro}</p>
+        <p className="hero-subtitle">{personal.heroSubtitle}</p>
         <div className="hero-actions">
           <ResumeDownloadButton />
           <a href="/demo" className="btn btn-ghost"><Sparkles className="h-4 w-4" />View Demo</a>

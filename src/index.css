@@ -227,12 +227,16 @@ main, .portfolio-footer { position: relative; z-index: 1; }
 
 .projects-section { background: radial-gradient(760px 360px at 50% 0%, rgba(41,151,255,.06), transparent 70%); }
 .project-showcase { --card-accent: var(--blue); display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 4rem; padding: 3.4rem 0; }
+.project-featured { grid-template-columns: 1.25fr .95fr; padding: 4.25rem 0; }
+.project-featured .project-visual { transform: perspective(1200px) rotateY(-4deg); transition: transform .3s ease, box-shadow .3s ease; }
+.project-featured:hover .project-visual { transform: perspective(1200px) rotateY(0deg) translateY(-6px); box-shadow: 0 28px 80px rgba(0,0,0,.5), 0 0 56px color-mix(in srgb, var(--card-accent) 24%, transparent); }
 .project-showcase + .project-showcase { border-top: 1px solid var(--hairline); }
 .project-showcase.accent-violet { --card-accent: var(--violet); }
 .project-showcase.accent-cyan { --card-accent: var(--cyan); }
 .project-showcase.accent-amber { --card-accent: var(--amber); }
 .project-reverse .project-visual { order: 2; }
 .project-visual { border: 1px solid color-mix(in srgb, var(--card-accent) 28%, var(--hairline)); border-radius: 22px; overflow: hidden; background: radial-gradient(500px 260px at 50% 0%, color-mix(in srgb, var(--card-accent) 17%, transparent), transparent 72%), var(--surface); box-shadow: 0 24px 60px rgba(0,0,0,.38); }
+.project-preview-image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
 .terminal-preview { min-height: 280px; }
 .terminal-preview-bar { display: flex; gap: 7px; padding: 1rem; border-bottom: 1px solid var(--hairline); }
 .terminal-preview-bar span { width: 11px; height: 11px; border-radius: 999px; background: #3a3a42; }
@@ -255,6 +259,8 @@ main, .portfolio-footer { position: relative; z-index: 1; }
 .demo-chip { display: inline-flex; align-items: center; gap: .4rem; border: 1px solid color-mix(in srgb, var(--card-accent, var(--blue)) 42%, var(--hairline)); border-radius: 999px; background: color-mix(in srgb, var(--card-accent, var(--blue)) 16%, transparent); color: hsl(var(--foreground)); padding: .42rem .75rem; font-size: .78rem; font-weight: 800; text-decoration: none; box-shadow: 0 0 24px color-mix(in srgb, var(--card-accent, var(--blue)) 18%, transparent); transition: transform .18s ease, background .2s ease, border-color .2s ease; }
 .demo-chip:hover { transform: translateY(-2px) scale(1.03); background: color-mix(in srgb, var(--card-accent, var(--blue)) 26%, transparent); border-color: var(--card-accent, var(--blue)); }
 .architecture-chip { background: rgba(255,255,255,.035); }
+.demo-chip-muted { color: var(--muted-text); border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.035); box-shadow: none; }
+.demo-chip-muted:hover { transform: none; border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.035); }
 
 .skills-section { background: radial-gradient(680px 360px at 88% 100%, rgba(140,92,255,.06), transparent 70%); }
 .skills-grid, .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
@@ -329,16 +335,33 @@ main, .portfolio-footer { position: relative; z-index: 1; }
 .related-card:hover { transform: translateY(-3px); border-color: var(--blue); background: rgba(41,151,255,.08); }
 .related-card span { display: block; margin-bottom: .4rem; font-weight: 900; }
 .related-card p { color: var(--muted-text); font-size: .82rem; }
+.beacon-hero { padding-bottom: 2rem; }
+.beacon-stack { max-width: 760px; margin-top: 1.5rem; }
+.beacon-hero-actions { margin-top: 1.5rem; }
+.beacon-capability-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding-bottom: 4rem; }
+.beacon-diagram-shell { padding-bottom: 6rem; }
+.beacon-tabs { display: flex; gap: .5rem; margin-bottom: 1rem; overflow-x: auto; padding-bottom: .5rem; }
+.beacon-tabs button { flex: 0 0 auto; border: 1px solid var(--hairline); border-radius: 999px; background: rgba(255,255,255,.035); color: var(--muted-text); cursor: pointer; font-size: .78rem; font-weight: 900; padding: .55rem .85rem; transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
+.beacon-tabs button:hover, .beacon-tabs button.active { color: hsl(var(--foreground)); border-color: var(--blue); background: rgba(41,151,255,.16); transform: translateY(-1px); }
+.beacon-diagram-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(320px, .75fr); gap: 1.25rem; align-items: start; }
+.beacon-image-panel { overflow: hidden; border: 1px solid color-mix(in srgb, var(--blue) 35%, var(--hairline)); border-radius: 24px; background: rgba(20,20,25,.82); box-shadow: 0 28px 90px rgba(0,0,0,.38), 0 0 56px rgba(41,151,255,.14); }
+.beacon-image-panel img { display: block; width: 100%; height: auto; }
+.beacon-notes h2 { margin-bottom: .8rem; font-size: clamp(1.45rem, 3vw, 2rem); font-weight: 900; }
+.beacon-point-list { display: grid; gap: .65rem; margin-top: 1.2rem; }
+.beacon-point-list div { position: relative; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; background: rgba(255,255,255,.035); color: hsl(var(--foreground) / .78); font-size: .9rem; line-height: 1.45; padding: .8rem .85rem .8rem 2rem; }
+.beacon-point-list div::before { content: ""; position: absolute; left: .85rem; top: 1.15rem; width: 7px; height: 7px; border-radius: 999px; background: var(--cyan); box-shadow: 0 0 16px rgba(90,200,250,.7); }
+.beacon-evidence { padding-top: 0; }
 
 @keyframes shimmer { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 @keyframes bob { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(12px) scale(1.35); } }
 @media (max-width: 900px) {
-  .project-showcase, .project-reverse { grid-template-columns: 1fr; gap: 2rem; }
+  .project-showcase, .project-featured, .project-reverse { grid-template-columns: 1fr; gap: 2rem; }
   .project-reverse .project-visual { order: 0; }
   .skills-grid, .contact-grid { grid-template-columns: 1fr; }
   .job-heading { flex-direction: column; }
   .architecture-layout, .evidence-grid, .related-grid { grid-template-columns: 1fr; }
+  .beacon-diagram-layout, .beacon-capability-grid { grid-template-columns: 1fr; }
   .diagram-nodes { grid-template-columns: 1fr; }
   .diagram-flow { grid-template-columns: 1fr; border-radius: 18px; }
 }

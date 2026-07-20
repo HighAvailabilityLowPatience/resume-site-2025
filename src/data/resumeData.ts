@@ -12,9 +12,11 @@ export const resumeData = {
   personal: {
     name: "Emmanuel Johnson",
     title: "DevOps & Cloud Infrastructure Engineer | Technical Project Lead",
-    intro: "Building automated, scalable systems — and leading the projects that deliver them. Passionate about cloud-native technologies, CI/CD pipelines, and helping teams ship faster with confidence.",
+    heroHeadline: "I design systems that help teams move faster and operate smarter.",
+    heroSubtitle: "DevOps, cloud infrastructure, automation, and AI-powered tooling built with an operator's eye for reliability.",
+    intro: "Seasoned IT professional with 9+ years supporting mission-critical defense infrastructure in the U.S. Navy. Experienced designing secure, highly available systems while leading technical teams responsible for enterprise Windows, Linux, networking, and cloud infrastructure. Active TS/SCI clearance combined with hands-on experience in AWS, Infrastructure as Code, containerization, CI/CD automation, and modern DevOps practices. Recognized for solving complex technical problems, improving operational efficiency, and delivering reliable infrastructure at scale.",
     location: "Reston, VA",
-    yearsExperience: "8+",
+    yearsExperience: "9+",
     availability: "Open to Opportunities",
     clearance: "Active TS/SCI Clearance",
     // EDIT: Replace with your photo URL or leave empty for initials fallback
@@ -45,6 +47,13 @@ export const resumeData = {
       "Ansible & Configuration Management",
       "Jenkins, GitLab CI, GitHub Actions (CI/CD)",
     ],
+    intelligentSystems: [
+      "AI Agent Runtime",
+      "LLM Tool Integration",
+      "Model Context Protocol",
+      "PostgreSQL",
+      "Runtime Observability",
+    ],
     scripting: [
       "Python",
       "Bash / Shell Scripting",
@@ -68,6 +77,17 @@ export const resumeData = {
   // =====================================================
   projects: [
   {
+    name: "Beacon Platform",
+    description: "Engineered a modular AI operating platform that enables autonomous agents to reason, execute tools, manage long-running memory, schedule recurring workloads, and integrate new capabilities through plug-in MCP servers.",
+    tools: ["React", "Express", "PostgreSQL", "OpenRouter", "MCP", "Docker", "Scheduler", "Playwright", "NocoDB"],
+    outcome: "Built a containerized platform with autonomous multi-step execution, centralized job orchestration, LLM-powered context compression, execution telemetry, an extensible MCP tool ecosystem, and a React operations dashboard for live monitoring.",
+    repoUrl: "https://github.com/HighAvailabilityLowPatience/Beacon.git",
+    demoUrl: "",
+    architectureUrl: "/projects/beacon",
+    featured: true,
+    imageUrl: "/assets/beacon/platform-architecture.png",
+  },
+  {
     name: "Self-Healing Infrastructure System",
     description: "Designed and implemented a self-healing infrastructure platform with automated monitoring, failure detection, and recovery mechanisms.",
     tools: ["Jenkins", "Bash", "Docker", "Linux", "ntfy", "HTTP health checks"],
@@ -81,7 +101,7 @@ export const resumeData = {
     description: "Built an end-to-end CI/CD pipeline using GitHub Actions to automate application build, containerization, and deployment workflows.",
     tools: ["GitHub Actions", "Docker", "DockerHub", "SSH", "Linux"],
     outcome: "Implemented automated workflow from code commit to deployment, including linting, container builds, image versioning, and remote server deployment. Enabled continuous deployment and eliminated manual deployment steps.",
-    repoUrl: " https://github.com/HighAvailabilityLowPatience/devops-cicd-github-actions-docker.git",
+    repoUrl: "https://github.com/HighAvailabilityLowPatience/devops-cicd-github-actions-docker.git",
     architectureUrl: "/projects/cicd-pipeline",
   },
   {

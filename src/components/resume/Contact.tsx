@@ -41,9 +41,9 @@ const Contact = () => {
       <div className="portfolio-container">
       <div className="contact-card">
         <p className="eyebrow">Contact</p>
-        <h2>Let's build something reliable.</h2>
+        <h2>Let’s build something reliable.</h2>
         <p className="section-lede">
-          {personal.availability}. Reach out for DevOps, cloud infrastructure, automation, or technical leadership conversations.
+          {personal.availability}. Reach out about systems, automation, platforms, or technical work that needs thoughtful execution.
         </p>
       <div className="contact-grid">
         {contactLinks.map((link, index) => (

@@ -145,6 +145,10 @@ export default function ResumePDF() {
   </Text>
 
   <Text>
+    Intelligent Systems: {resumeData.skills.intelligentSystems.join(", ")}
+  </Text>
+
+  <Text>
     Scripting: {resumeData.skills.scripting.join(", ")}
   </Text>
 
@@ -205,8 +209,11 @@ export default function ResumePDF() {
         Technologies: {project.tools.join(", ")}
       </Text>
 
-      <Text>
-        {project.outcome}
+      <Text style={styles.techStack}>
+        Outcomes: {project.outcome}
+      </Text>
+      <Text style={styles.techStack}>
+        Repo: {project.repoUrl}
       </Text>
     </View>
   ))}
