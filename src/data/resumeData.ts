@@ -193,7 +193,7 @@ export const resumeData = {
   education: [
     {
       degree: "B.S. in Information Technology",
-      school: "Western Governers University",
+      school: "Western Governors University",
       location: "N/A",
       year: "Fall 2028",
     },
