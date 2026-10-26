@@ -191,10 +191,10 @@ useEffect(() => {
         <SectionHeader index="01" title="Live Applications" caption="Embedded production windows" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-20">
           <DisplayWindow title="Astro Calc" subtitle="NODE.MESH-A" icon={Radio} accent="primary">
-            <IframeFrame src="https://astro-calc.ngrok.app" title="Astro Calc" reloadKey={astroNonce} />
+            <IframeFrame src="https://astro.halpdemo.app/" title="Astro Calc" reloadKey={astroNonce} />
           </DisplayWindow>
           <DisplayWindow title="Change Calc" subtitle="CORE.PRIMARY" icon={Shield} accent="accent">
-            <IframeFrame src="https://change-calc.ngrok.app" title="Change Calc" reloadKey={changeNonce} />
+            <IframeFrame src="https://change.halpdemo.app/" title="Change Calc" reloadKey={changeNonce} />
           </DisplayWindow>
         </div>
 
