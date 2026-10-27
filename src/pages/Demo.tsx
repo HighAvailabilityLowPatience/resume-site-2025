@@ -182,10 +182,19 @@ const triggerBreak = async (target: "astro" | "system") => {
         kind: result.status === "fulfilled" ? "ok" : "error",
       });
     });
-  } finally {
+ } finally {
     setPending(null);
 
-    // Refresh the selected embedded windows.
+    // Refresh selected windows after the stop requests finish.
+    setAstroNonce((previous) => previous + 1);
+
+    if (target === "system") {
+      setChangeNonce((previous) => previous + 1);
+    }
+  }
+}; // End triggerBreak.
+
+// Separate effect: refresh both windows every 15 seconds.
 useEffect(() => {
   const interval = setInterval(() => {
     setAstroNonce((previous) => previous + 1);
