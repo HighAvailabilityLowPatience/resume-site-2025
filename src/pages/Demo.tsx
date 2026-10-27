@@ -186,13 +186,6 @@ const triggerBreak = async (target: "astro" | "system") => {
     setPending(null);
 
     // Refresh the selected embedded windows.
-    setAstroNonce((n) => n + 1);
-
-    if (target === "system") {
-      setChangeNonce((n) => n + 1);
-    }
-  }
-};
 useEffect(() => {
   const interval = setInterval(() => {
     setAstroNonce((previous) => previous + 1);
