@@ -193,6 +193,14 @@ const triggerBreak = async (target: "astro" | "system") => {
     }
   }
 };
+useEffect(() => {
+  const interval = setInterval(() => {
+    setAstroNonce((previous) => previous + 1);
+    setChangeNonce((previous) => previous + 1);
+  }, 15000);
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Subtle grid backdrop */}
