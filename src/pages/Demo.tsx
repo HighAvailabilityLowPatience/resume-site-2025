@@ -66,16 +66,19 @@ const Demo = () => {
     return () => clearInterval(tick);
   }, []);
 
-  // Polls backend every 2s and updates systemHealthy
+ // Poll the API every 2 seconds.
+// Both apps healthy → 200; either app down → 503.
 useEffect(() => {
   const interval = setInterval(async () => {
     try {
-      const res = await fetch("https://updatelistener.ngrok.app/health");
+      const res = await fetch("https://halpdemo.app/health", {
+        cache: "no-store",
+        signal: AbortSignal.timeout(1800)
+      });
 
-      // 200 = healthy, anything else = unhealthy
       setSystemHealthy(res.ok);
     } catch {
-      // network failure = unhealthy
+      // Network failure or timeout triggers the alarm.
       setSystemHealthy(false);
     }
   }, 2000);
