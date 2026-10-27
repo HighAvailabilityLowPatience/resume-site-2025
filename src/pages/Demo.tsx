@@ -11,9 +11,9 @@ import { ArrowLeft, Radio, Shield, Zap, AlertOctagon, Loader2 } from "lucide-rea
  *  3. System Activity    — streaming log feed
  */
 
-const BREAK_ENDPOINTS = {
-  astro: "https://updatelistener.ngrok.app/breakcontainer",
-  system: "https://updatelistener.ngrok.app/breakenvironment",
+const STOP_ENDPOINTS = {
+  astro: "https://halpdemo.app/v1/apps/astro/stop",
+  change: "https://halpdemo.app/v1/apps/change/stop",
 } as const;
 
 const SEED_LOGS: { source: string; message: string }[] = [
@@ -136,7 +136,63 @@ useEffect(() => {
     controller?.abort();
   };
 }, []);
+const triggerBreak = async (target: "astro" | "system") => {
+  setPending(target);
 
+  const apps: ("astro" | "change")[] =
+    target === "astro" ? ["astro"] : ["astro", "change"];
+
+  pushLog({
+    source: "OPERATOR",
+    message: `Stop requested: ${apps.join(" and ")}`,
+    kind: "warn",
+  });
+
+  try {
+    // Send the selected stop requests together and wait for all results.
+    const results = await Promise.allSettled(
+      apps.map(async (app) => {
+        const response = await fetch(STOP_ENDPOINTS[app], {
+          method: "POST",
+          signal: AbortSignal.timeout(15000),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        return app;
+      })
+    );
+
+    // Report each result separately; stopping both can partially succeed.
+    results.forEach((result, index) => {
+      const app = apps[index];
+
+      pushLog({
+        source: "OPERATOR",
+        message:
+          result.status === "fulfilled"
+            ? `${app}: stop completed`
+            : `${app}: stop not confirmed — ${
+                result.reason instanceof Error
+                  ? result.reason.message
+                  : "Request failed"
+              }`,
+        kind: result.status === "fulfilled" ? "ok" : "error",
+      });
+    });
+  } finally {
+    setPending(null);
+
+    // Refresh the selected embedded windows.
+    setAstroNonce((n) => n + 1);
+
+    if (target === "system") {
+      setChangeNonce((n) => n + 1);
+    }
+  }
+};
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Subtle grid backdrop */}
@@ -221,7 +277,7 @@ useEffect(() => {
             disabled={pending !== null}
           />
           <BreakButton
-            label="Break Entire System"
+            label="Break Both Calculators"
             onClick={() => triggerBreak("system")}
             loading={pending === "system"}
             disabled={pending !== null}
