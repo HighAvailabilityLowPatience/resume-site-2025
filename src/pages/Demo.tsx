@@ -67,65 +67,75 @@ const Demo = () => {
   }, []);
 
  // Poll the API every 2 seconds.
-// Both apps healthy → 200; either app down → 503.
 useEffect(() => {
-  const interval = setInterval(async () => {
-    try {
-      const res = await fetch("https://halpdemo.app/health", {
-        cache: "no-store",
-        signal: AbortSignal.timeout(1800)
-      });
+  let cancelled = false;
+  let timer;
+  let controller;
 
-      setSystemHealthy(res.ok);
+  async function checkBothContainers() {
+    controller = new AbortController();
+
+    const timeout = setTimeout(() => controller.abort(), 8000);
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL;
+
+      if (!apiUrl) {
+        throw new Error("VITE_API_URL is not configured");
+      }
+
+      // Check one container's actual state, not just HTTP success.
+      async function isRunning(appId) {
+        const response = await fetch(
+          new URL(`/v1/apps/${appId}/status`, apiUrl),
+          {
+            cache: "no-store",
+            signal: controller.signal
+          }
+        );
+
+        if (!response.ok) return false;
+
+        const data = await response.json();
+
+        return data.running === true && data.status === "running";
+      }
+
+      // Start both requests and wait for both to finish.
+      const results = await Promise.allSettled([
+        isRunning("astro"),
+        isRunning("change")
+      ]);
+
+      const bothRunning = results.every(
+        result => result.status === "fulfilled" && result.value === true
+      );
+
+      if (!cancelled) {
+        setSystemHealthy(bothRunning);
+      }
     } catch {
-      // Network failure or timeout triggers the alarm.
-      setSystemHealthy(false);
-    }
-  }, 2000);
-
-  return () => clearInterval(interval);
-}, []);
-
-  // Periodic iframe reload — every 15s — so live windows reflect real backend state (crashes included)
-  useEffect(() => {
-    const reload = setInterval(() => {
-      setAstroNonce((n) => n + 1);
-      setChangeNonce((n) => n + 1);
-    }, 15000);
-    return () => clearInterval(reload);
-  }, []);
-
-  const triggerBreak = async (target: "astro" | "system") => {
-    setPending(target);
-    const url = target === "astro" ? BREAK_ENDPOINTS.astro : BREAK_ENDPOINTS.system;
-    const label = target === "astro" ? "Break Astro Calc" : "Break Entire System";
-    pushLog({ source: "OPERATOR", message: `→ ${label} requested`, kind: "warn" });
-    try {
-      const res = await fetch(url, { method: "POST" });
-      pushLog({
-        source: "OPERATOR",
-        message: `${label} responded ${res.status} ${res.statusText || ""}`.trim(),
-        kind: res.ok ? "ok" : "error",
-      });
-    } catch (err) {
-      pushLog({
-        source: "OPERATOR",
-        message: `${label} failed: ${(err as Error).message}`,
-        kind: "error",
-      });
+      if (!cancelled) {
+        setSystemHealthy(false);
+      }
     } finally {
-      setPending(null);
-      // Force-reload iframes shortly after a break so the crash is visible immediately
-      setTimeout(() => {
-        if (target === "astro") {
-          setAstroNonce((n) => n + 1);
-        } else {
-          setAstroNonce((n) => n + 1);
-          setChangeNonce((n) => n + 1);
-        }
-      }, 800);
+      clearTimeout(timeout);
+
+      // Wait two seconds before polling again; avoid overlapping requests.
+      if (!cancelled) {
+        timer = setTimeout(checkBothContainers, 2000);
+      }
     }
+  }
+
+  checkBothContainers();
+
+  return () => {
+    cancelled = true;
+    clearTimeout(timer);
+    controller?.abort();
   };
+}, []);
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
