@@ -78,7 +78,7 @@ useEffect(() => {
     const timeout = setTimeout(() => controller.abort(), 8000);
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL;
+      const apiUrl = "https://halpdemo.app";
 
       if (!apiUrl) {
         throw new Error("VITE_API_URL is not configured");
