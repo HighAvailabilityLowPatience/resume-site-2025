@@ -12,8 +12,8 @@ import { ArrowLeft, Radio, Shield, Zap, AlertOctagon, Loader2 } from "lucide-rea
  */
 
 const STOP_ENDPOINTS = {
-  astro: "https://halpdemo.app/v1/apps/astro/stop",
-  change: "https://halpdemo.app/v1/apps/change/stop",
+  astro: "https://demo-api.halpdemo.app/v1/apps/astro/stop",
+  change: "https://demo-api.halpdemo.app/v1/apps/change/stop",
 } as const;
 
 const SEED_LOGS: { source: string; message: string }[] = [
@@ -78,7 +78,7 @@ useEffect(() => {
     const timeout = setTimeout(() => controller.abort(), 8000);
 
     try {
-      const apiUrl = "https://halpdemo.app";
+      const apiUrl = "https://demo-api.halpdemo.app";
 
       if (!apiUrl) {
         throw new Error("VITE_API_URL is not configured");
