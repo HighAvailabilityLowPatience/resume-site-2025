@@ -214,9 +214,9 @@ export const resumeData = {
       year: "2024",
     },
     {
-      name: "AWS Certified Developer - Associate",
+      name: "AWS Certified Cloud Practioner",
       issuer: "Amazon Web Services",
-      year: "Target 2026",
+      year: "2026",
     },
   ],
 };
